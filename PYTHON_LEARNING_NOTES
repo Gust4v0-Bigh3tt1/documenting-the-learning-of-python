@@ -16,6 +16,7 @@ There are many CodeTowers out there with each having their own internal rules an
 The hearth, also known as the Tower's core, is where the Ancient Laws are writen on the bedrock upon which all magical engineering is built. Regardless of which CodeTower a wizard enters, the universal standards of the Hearth remain constant. It is the interface between the wizard's intent and the machine's reality.
 
 - **Universal Syntax:** While the specific keywords may shift between Towers, the logic of The Proclamation (I/O) and The Spell (Source) is a Universal Standard.
+  -
 
 - **The Spell (The .py file):**
 A set of written instructions forged on a digital scroll. The Spell is inert until it is offered to the Tower. It serves as the permanent record of the wizard's spell.
@@ -25,11 +26,11 @@ A set of written instructions forged on a digital scroll. The Spell is inert unt
 The unique magical engine of the tower. Each CodeTower (Python, Go, C) has its own engine, but they all perform the same duty: reading the Spell line-by-line and manifesting it into the world.
   - Verb: **Translates** human-readable spells into machine reality.
 
-- **The Spark (Execution/Running):**
-The act of telling the Tower to start reading the spell, energizing the spell, without the spark, the spell remains "inert".
-
 - **The Sputter (Syntax Errors):**
 what happens when the Tower doesn't understand the Spell. Since "The Comment" explains what is ignored, a small note on what causes the Tower to "jam" (syntax errors)
+
+- **The Spark (Execution/Running):**
+The act of telling the Tower to start reading the spell, energizing the spell, without the spark, the spell remains "inert".
 
 - **The Output Protocol:**
 The system by which the Tower communicates its internal state to the observer or to other machines.
@@ -37,7 +38,8 @@ The system by which the Tower communicates its internal state to the observer or
   - **The Proclamation (`print()`):**
   The simplest command mark to make the Tower speak. It sends a message to the observer's console (The Echo). It is a one-way announcement and cannot be used to feed other machines.
     - **The Echo (The Console):** This is the observer's plane where The Proclamation manifests. It is the "Universal Standard" for feedback.
-    - Verb: **Announces** data to the observer.
+      - Verb: **Announces** data to the observer.
+    - **The String (Text)** anything in betwween `""` is considered as plain text even if it's a command.
 
   - **The Finished Product (`return`):**
   A protocol for internal shipment. It yields a material to be captured and used by the next station in the assembly line. (See Tier II for Specialized Rigs/Functions).
@@ -58,7 +60,7 @@ Fundamental marks used to measure the relationship between two materials.
   - Verb: **Evaluates** the truth of a relationship. (See Tier IV, Quality Control Gates for more).
 ___________________________________________________________________________________________________________
 #### **FOOTNOTES:**
-- *(1)*
+- *NONE*
 
 
 ## Tier I: The Raw Materials (CH2)
