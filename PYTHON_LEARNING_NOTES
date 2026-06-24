@@ -38,6 +38,10 @@ what happens when the Tower doesn't understand the Spell. Since "The Comment" ex
 - **The Spark (Execution/Running):**
 The act of telling the Tower to start reading the spell, energizing the spell, without the spark, the spell remains "inert".
 
+- **The Processing:**
+This is the central work of the Tower's Mind. Before any data is announced via a Proclamation or yielded as a Finished Product, the Tower **Processes** the instructions provided. In its simplest form, this involves mathematical marks (like `+`). The Tower evaluates the expression (e.g., `250 + 75`) and holds the result (`325`) in its mind to be used by the next command in the sequence. *(see tier I, Variables for more).*
+  -Verb: **Processes** the logic marked in the spell.
+
 - **The Output Protocol:**
 The system by which the Tower communicates its internal state to the observer or to other machines.
 
@@ -55,7 +59,7 @@ The system by which the Tower communicates its internal state to the observer or
 Notes written in the margins of the Spell. The Tower's eye passes over these without effect, allowing wizards to leave messages for themselves or others.
   - Verb: **Ignores** text following the symbol.
 
-- **Unique Command Mark (Variables):** 
+- **Unique line Mark (Variables):** 
   Labeled containers of 1 specific meaning, phenomenon or raw material (data). *(see tier I, Variables for more).*
 
 - **Specialized Rig Runes (functions):** 
@@ -76,6 +80,7 @@ ________________________________________________________________________________
   - The Storage Bins (Ch 2): "Variables." Labeled containers holding specific raw materials (data) for the workers.
     - The Material Types:
       - Integers: Whole numbers.
+       (Unlike The String, presented in the hearth, which is wrapped in quotes to signify it is mere text material, a Raw Number is written plainly. If you wrap a number in quotes (e.g., "42"), the Tower treats it as an inert String; if you leave it bare (e.g., 42), the Tower recognizes it as a value capable of being used in a Calculation.)
       - Floats: Fractional measurements.
       - Strings: Scrolls of text.
       - Booleans: The binary truth of "Light" (True) or "Dark" (False).
@@ -198,10 +203,12 @@ Consistency: This avoids the "Kingdom" overlap by keeping the scope strictly ind
   - **The Tower's Mind (Interpreter):** The magical engine that **Translates** human-readable spells into machine reality.
   - **The Sputter (Syntax Error):** A failure that **Halts** translation when the Tower doesn't understand the Spell.
   - **The Spark (Execution):** The act that **Energizes** the spell, moving it from inert to active.
-  - **The Proclamation (print()):** A command mark that **Announces** data to the observer's console
-    - **The Echo (Console):** The observer's plane where the Proclamation manifests.
-    - **The String (Text):** Anything between `""` treated as plain text material.
-  - **The Finished Product (return):** A protocol that **Yields** data for internal shipment to the next station. `(see Tier II)`
+  - **The Processing:** The internal computation of the Tower's Mind that transforms inputs before they are announced or shipped.
+  - **The Output Protocol:**
+    - **The Proclamation (print()):** A command mark that **Announces** data to the observer's console
+      - **The Echo (Console):** The observer's plane where the Proclamation manifests.
+      - **The String (Text):** Anything between `""` treated as plain text material.
+    - **The Finished Product (return):** A protocol that **Yields** data for internal shipment to the next station. `(see Tier II)`
   - **The Comment (#):** A margin note that the Tower **Ignores**.
   - **Unique Command Mark (Variables):** Labeled containers for specific materials or meanings. `(see Tier I)`
   - **Specialized Rig Runes (Functions):** Repeatable machinery for complex transformations. `(see Tier II)`
@@ -289,9 +296,9 @@ ____________________________
 ____________________________
 
 ### Decision Log
-the decision log is for YOU (Boots) to understand the structure behind my project and not just agree with every nonsense I could say. 
+the decision log is for YOU (Boots) to understand the structure behind my project and not just agree with every nonsense I could say. Inprotant to keep aditions to a minimum in order to avoid the decision log in becoming to heavy/big. (only provide new additions to the decision log when prompted.)
 
-- **V-i.1: The Hearth Shadowing Doctrine** — Placed Junction Points for Variables, Functions, and Logic in the Hearth.
+- **V-i.1: The Hearth Shadowing** — Placed Junction Points for Variables, Functions, and Logic in the Hearth.
   - *Because:* Ensures the foundation is structurally integrated with future Tiers.
   - *Rejected:* Omitting them (would have left the foundation isolated).
 
@@ -309,6 +316,16 @@ the decision log is for YOU (Boots) to understand the structure behind my projec
 - **V-i.5: Python Tower Capability Mapping** — Anchored Python's strengths (backend/automation) and constraints (no frontend) to Ch 1 (The Hearth).
   - *Because:* Establishes what the tool is designed to build *before* the apprentice begins learning its syntax, preventing early tool-selection confusion.
   - *Rejected:* Moving use-case limits to Tier II/III (which would leave the apprentice building without knowing the end-product's environment).
+
+- **V-i.6: Sequence of Logic** — Arithmetic must be documented prior to Output Protocols.
+
+  - **Because:** In the instruction `print(250 + 75)`, the Tower performs the addition (Calculation) before it performs the Proclamation. Understanding how the Tower processes values internally is prerequisite to understanding how it announces them.
+  - **Rejected:** Placing it after. This would imply the Proclamation happens first, which is chronologically backwards in terms of the Tower's execution flow.
+
+- **V-i.7: Arithmetic-Logic Decoupling** — The Processing is now firmly established as the "action" preceding the "announcement."
+
+- **Because:** It creates a clean mental hand-off from the logic of the engine to the observation of the console.
+- **Rejected:** Any further additions to this specific lesson (e.g., complex math) are better suited for **Tier III: The Infrastructure I** to prevent "The Hearth" from becoming cluttered.
 ____________________________
 
 ### Current Status
