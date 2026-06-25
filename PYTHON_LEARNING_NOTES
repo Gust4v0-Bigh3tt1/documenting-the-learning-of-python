@@ -32,8 +32,9 @@ A set of written instructions forged on a digital scroll. The Spell is inert unt
 The unique magical engine of the tower. Each CodeTower (Python, Go, C) has its own engine, but they all perform the same duty: reading the Spell line-by-line and manifesting it into the world.
   - Verb: **Translates** human-readable spells into machine reality.
 
-- **The Sputter (Syntax Errors):**
-what happens when the Tower doesn't understand the Spell. Since "The Comment" explains what is ignored, a small note on what causes the Tower to "jam" (syntax errors)
+- **The Jamming (Syntax Errors):**
+ A failure that **Halts** the processing when the Tower encounters a structural violation it cannot resolve or doesn't understand the Spell.
+  - *The Mismatch Pair (Delimiters Mismatch):*  The Tower requires every opener to be closed by its exact pair — " closed by ", `(` closed by `)`. A mismatch `("text'` or `(text])` is an irreconcilable contradiction. The Tower **halts** and reports where it noticed the break, not necessarily where the mistake was introduced.
 
 - **The Spark (Execution/Running):**
 The act of telling the Tower to start reading the spell, energizing the spell, without the spark, the spell remains "inert".
@@ -204,7 +205,7 @@ Consistency: This avoids the "Kingdom" overlap by keeping the scope strictly ind
   - **Case Sensitivity (Precision):** The law that `Print()` != `print()`; character casing changes identity.
   - **The Spell (.py file):** A digital scroll that **Stores** the logic of the program.
   - **The Tower's Mind (Interpreter):** The magical engine that **Translates** human-readable spells into machine reality.
-  - **The Sputter (Syntax Error):** A failure that **Halts** translation when the Tower doesn't understand the Spell.
+  - **The Jamming (Syntax Error):** A failure that **Halts** the processing when the Tower doesn't understand the Spell.
   - **The Spark (Execution):** The act that **Energizes** the spell, moving it from inert to active.
   - **The Sequence Law (Sequential Execution):** The Tower reads and process each line of the Spell in order, top to bottom — no skipping, no reordering.
   - **The Processing:** The internal computation of the Tower's Mind that transforms inputs before they are announced or shipped.
@@ -313,7 +314,7 @@ the decision log is for YOU (Boots) to understand the structure behind my projec
   - *Because:* Differentiates the ruleset from the execution engine.
   - *Rejected:* Using "The Cauldron" (too Alchemic, lost the Industrial Workshop blend).
 
-- **V-i.4: Lifecycle Additions** — Added "The Spark" and "The Sputter."
+- **V-i.4: Lifecycle Additions** — Added "The Spark" and "The Jamming."
   - *Because:* Documents the physical act of running code and the reality of syntax failure.
 
 - **V-i.5: Python Tower Capability Mapping** — Anchored Python's strengths (backend/automation) and constraints (no frontend) to Ch 1 (The Hearth).
@@ -337,7 +338,11 @@ the decision log is for YOU (Boots) to understand the structure behind my projec
 ____________________________
 
 ### Current Status
-The **Universal Foundations (The Hearth)** are now 6/11 hardened in both Prose and `-E` siblings with the integration of the Python Tower's capabilities and constraints. Command syntax, case sensitivity, output protocols, and language-specific boundaries are established. All other tiers remain in skeleton form.
+The **Universal Foundations (The Hearth)** are now 7/11 hardened in both Prose and -E siblings. All other tiers remain in skeleton form.
+Most recent addition: The Jamming and its first named child doctrine, The Mismatch Pair.
 ____________________________
 
 hey boots, soo I'm coming back here in the beginning of the course after finishing learning Git to document everything I've learned. what about this lesson can I add to my notes?
+
+does the decision log have any additions?
+do I need to update my current status?
