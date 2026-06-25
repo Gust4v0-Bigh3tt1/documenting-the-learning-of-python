@@ -38,6 +38,9 @@ what happens when the Tower doesn't understand the Spell. Since "The Comment" ex
 - **The Spark (Execution/Running):**
 The act of telling the Tower to start reading the spell, energizing the spell, without the spark, the spell remains "inert".
 
+- **The Sequence Law (Sequential Execution):**
+The Tower's Mind does not choose which line to read first — it always begins at the top of the Spell and works downward. This means the physical position of a line determines when it's processed. A Proclamation written on line 1 will always announce before one written on line 4. Rearranging lines changes behavior.
+
 - **The Processing:**
 This is the central work of the Tower's Mind. Before any data is announced via a Proclamation or yielded as a Finished Product, the Tower **Processes** the instructions provided. In its simplest form, this involves mathematical marks (like `+`). The Tower evaluates the expression (e.g., `250 + 75`) and holds the result (`325`) in its mind to be used by the next command in the sequence. *(see tier I, Variables for more).*
   -Verb: **Processes** the logic marked in the spell.
@@ -203,6 +206,7 @@ Consistency: This avoids the "Kingdom" overlap by keeping the scope strictly ind
   - **The Tower's Mind (Interpreter):** The magical engine that **Translates** human-readable spells into machine reality.
   - **The Sputter (Syntax Error):** A failure that **Halts** translation when the Tower doesn't understand the Spell.
   - **The Spark (Execution):** The act that **Energizes** the spell, moving it from inert to active.
+  - **The Sequence Law (Sequential Execution):** The Tower reads and process each line of the Spell in order, top to bottom — no skipping, no reordering.
   - **The Processing:** The internal computation of the Tower's Mind that transforms inputs before they are announced or shipped.
   - **The Output Protocol:**
     - **The Proclamation (print()):** A command mark that **Announces** data to the observer's console
@@ -253,8 +257,7 @@ Consistency: This avoids the "Kingdom" overlap by keeping the scope strictly ind
    - Collections that forbid duplicates.
 
   Tier VI: The Infrastructure II (Ch 12)
-   (The Shield of Resilience/Emergency Shut-off (Errors) and Final Inspection (Integration).
-)
+   (The Shield of Resilience/Emergency Shut-off (Errors) and Final Inspection (Integration).)
    - The Safety Net (try/except): Catching a backfired spell before it destroys the tower.
    - The Alchemist's Alarm (raise): Deliberately triggering an error when rules are broken.
 
@@ -319,17 +322,22 @@ the decision log is for YOU (Boots) to understand the structure behind my projec
 
 - **V-i.6: Sequence of Logic** — Arithmetic must be documented prior to Output Protocols.
 
-  - **Because:** In the instruction `print(250 + 75)`, the Tower performs the addition (Calculation) before it performs the Proclamation. Understanding how the Tower processes values internally is prerequisite to understanding how it announces them.
-  - **Rejected:** Placing it after. This would imply the Proclamation happens first, which is chronologically backwards in terms of the Tower's execution flow.
+  - *Because:* In the instruction `print(250 + 75)`, the Tower performs the addition (Calculation) before it performs the Proclamation. Understanding how the Tower processes values internally is prerequisite to understanding how it announces them.
+  - *Rejected:* Placing it after. This would imply the Proclamation happens first, which is chronologically backwards in terms of the Tower's execution flow.
 
 - **V-i.7: Arithmetic-Logic Decoupling** — The Processing is now firmly established as the "action" preceding the "announcement."
 
-- **Because:** It creates a clean mental hand-off from the logic of the engine to the observation of the console.
-- **Rejected:** Any further additions to this specific lesson (e.g., complex math) are better suited for **Tier III: The Infrastructure I** to prevent "The Hearth" from becoming cluttered.
+  - *Because:* It creates a clean mental hand-off from the logic of the engine to the observation of the console.
+  - *Rejected:* Any further additions to this specific lesson (e.g., complex math) are better suited for **Tier III: The Infrastructure I** to prevent "The Hearth" from becoming cluttered.
+
+- **V-i.8: Sequence Law Placement** — Inserted The Sequence Law as a named entry between The Spark and The Processing, not as a child of either.
+
+  - *Because:* The Spark is a one-time trigger; Processing is continuous per-line work. Parenting Processing under Spark would imply ignition and computation are the same phase — they are not. The Sequence Law is the connective tissue between them.
+  - *Rejected:* Making Processing a child of Spark (collapses a three-phase reality into two, breaks when loops re-enter in Tier IV without re-triggering Spark).
 ____________________________
 
 ### Current Status
-The **Universal Foundations (The Hearth)** are now 4/11 hardened in both Prose and `-E` siblings with the integration of the Python Tower's capabilities and constraints. Command syntax, case sensitivity, output protocols, and language-specific boundaries are established. All other tiers remain in skeleton form.
+The **Universal Foundations (The Hearth)** are now 6/11 hardened in both Prose and `-E` siblings with the integration of the Python Tower's capabilities and constraints. Command syntax, case sensitivity, output protocols, and language-specific boundaries are established. All other tiers remain in skeleton form.
 ____________________________
 
 hey boots, soo I'm coming back here in the beginning of the course after finishing learning Git to document everything I've learned. what about this lesson can I add to my notes?
