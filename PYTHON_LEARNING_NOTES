@@ -1,4 +1,4 @@
-# A self made project to document the learning of python with boot.dev's guidence
+# A self made project to document the learning of python ***with boot.dev's guidence***
 
 
 ## ***(i). Command Syntax (Document Only):***
@@ -17,7 +17,7 @@ There are many CodeTowers out there with each having their own internal rules an
    - **The Facade Limit (Constraint):** Python is not designed for crafting the external facade of the tower that the public interacts with directly (3).
 
 
-## ***i-The Hearth (Universal Foundations):***
+## ***i-The Hearth (Universal Foundations): (Ch1)***
 The hearth, also known as the Tower's core, is where the Ancient Laws are writen on the bedrock upon which all magical engineering is built. Regardless of which CodeTower a wizard enters, the universal standards of the Hearth remain constant. It is the interface between the wizard's intent and the machine's reality.
 
 - **Universal Syntax:** While the specific keywords may shift between Towers, the logic of The Proclamation (I/O) and The Spell (Source) is a Universal Standard.
@@ -35,6 +35,10 @@ The unique magical engine of the tower. Each CodeTower (Python, Go, C) has its o
 - **The Jamming (Syntax Errors):**
  A failure that **Halts** the processing when the Tower encounters a structural violation it cannot resolve or doesn't understand the Spell.
   - *The Mismatch Pair (Delimiters Mismatch):*  The Tower requires every opener to be closed by its exact pair — " closed by ", `(` closed by `)`. A mismatch `("text'` or `(text])` is an irreconcilable contradiction. The Tower **halts** and reports where it noticed the break, not necessarily where the mistake was introduced.
+
+- **The Phantom Malfunction (Logic Error):** Valid spell that runs but produces the wrong result — the Tower did exactly what it was told, not what was meant. *(see Tier IV, Quality Control Gates for more).*
+
+- **The Costly Spell (Performance Error):** A valid, correct spell that runs too slowly due to inefficient instructions fed to the engine. `(SEALED.)`
 
 - **The Spark (Execution/Running):**
 The act of telling the Tower to start reading the spell, energizing the spell, without the spark, the spell remains "inert".
@@ -158,7 +162,7 @@ Tier VI: The Infrastructure II (Ch 12)
   
   - Final Inspection (Ch 12): The "Challenges." Stress-testing the entire integrated workshop.
 
-Tier VII: The Blueprints (Scaling/Classes and OOP.) SEALED.
+Tier VII: The Blueprints (Scaling/Classes and OOP.) `(SEALED.)`
 
 (Structural Audit:
 
@@ -206,6 +210,8 @@ Consistency: This avoids the "Kingdom" overlap by keeping the scope strictly ind
   - **The Spell (.py file):** A digital scroll that **Stores** the logic of the program.
   - **The Tower's Mind (Interpreter):** The magical engine that **Translates** human-readable spells into machine reality.
   - **The Jamming (Syntax Error):** A failure that **Halts** the processing when the Tower doesn't understand the Spell.
+  - **The Phantom Malfunction (Logic Error):** Valid spell that runs but produces the wrong result — the Tower did exactly what it was told, not what was meant. `(see Tier IV)`
+  - **The Costly Spell (Performance Error):** A valid, correct spell that runs too slowly due to inefficient instructions fed to the engine. `(SEALED.)`
   - **The Spark (Execution):** The act that **Energizes** the spell, moving it from inert to active.
   - **The Sequence Law (Sequential Execution):** The Tower reads and process each line of the Spell in order, top to bottom — no skipping, no reordering.
   - **The Processing:** The internal computation of the Tower's Mind that transforms inputs before they are announced or shipped.
@@ -262,7 +268,7 @@ Consistency: This avoids the "Kingdom" overlap by keeping the scope strictly ind
    - The Safety Net (try/except): Catching a backfired spell before it destroys the tower.
    - The Alchemist's Alarm (raise): Deliberately triggering an error when rules are broken.
 
-  Tier VII: The Blueprints (Scaling/Classes and OOP.) SEALED.
+  Tier VII: The Blueprints (Scaling/Classes and OOP.) `(SEALED.)`
 ____________________________
 
 ### Documentation Standards
@@ -335,11 +341,16 @@ the decision log is for YOU (Boots) to understand the structure behind my projec
 
   - *Because:* The Spark is a one-time trigger; Processing is continuous per-line work. Parenting Processing under Spark would imply ignition and computation are the same phase — they are not. The Sequence Law is the connective tissue between them.
   - *Rejected:* Making Processing a child of Spark (collapses a three-phase reality into two, breaks when loops re-enter in Tier IV without re-triggering Spark).
+
+**V-i.9: Performance Failure Naming** — Named **The Costly Spell (Performance Error)**, not "The Sluggish Engine."
+
+  - *Because:* The engine is a constant — it performs identically regardless of input. The inefficiency lives in the spell itself. Naming the failure after the spell locates the problem at its actual source, consistent with how The Jamming and The Phantom Malfunction are also spell-side failures, not engine-side reactions.
+  - *Rejected:* "The Sluggish Engine" (misattributes the failure to the engine, which is neutral) and "The Sluggish Logic" (naming collision with The Phantom Malfunction).
 ____________________________
 
 ### Current Status
-The **Universal Foundations (The Hearth)** are now 7/11 hardened in both Prose and -E siblings. All other tiers remain in skeleton form.
-Most recent addition: The Jamming and its first named child doctrine, The Mismatch Pair.
+The **Universal Foundations (The Hearth)** are now 8/11 hardened in both Prose and -E siblings. All other tiers remain in skeleton form.
+Most recent additions: The Phantom Malfunction (Logic Error) and The Costly Spell (Performance Error).
 ____________________________
 
 hey boots, soo I'm coming back here in the beginning of the course after finishing learning Git to document everything I've learned. what about this lesson can I add to my notes?
