@@ -11,10 +11,10 @@ The moddifiers bellow are just for a better explanation of how to code they are 
 ## ***CodeTowers (programing languages):***
 There are many CodeTowers out there with each having their own internal rules and regulations and way of doing/creating things into reality with their magical engineering. This grimoire will only explain how the python Tower works.
   #### **The Python Tower (Python):**
-  The Python Tower is a specialized, highly accessible realm of engineering. It is crafted to get out of the wizard's way, allowing them to focus on the pure logic of their spells rather than the plumbing of the machine (1). While it is an incredibly popular domain for building heavy machinery, it has strict structural limits.
+  The Python Tower is a specialized, highly accessible realm of engineering. It is crafted to get out of the wizard's way, allowing them to focus on the pure logic of their spells rather than the plumbing of the machine *(1)*. While it is an incredibly popular domain for building heavy machinery, it has strict structural limits.
 
-   - **The Backend Core (Use Case):** The Python Tower excels at building internal supply lines, automated sorting machines, and heavy logic brains (2).
-   - **The Facade Limit (Constraint):** Python is not designed for crafting the external facade of the tower that the public interacts with directly (3).
+   - **The Backend Core (Use Case):** The Python Tower excels at building internal supply lines, automated sorting machines, and heavy logic brains *(2)*.
+   - **The Facade Limit (Constraint):** Python is not designed for crafting the external facade of the tower that the public interacts with directly *(3)*.
 
 
 ## ***i-The Hearth (Universal Foundations): (Ch1)***
@@ -34,7 +34,9 @@ The unique magical engine of the tower. Each CodeTower (Python, Go, C) has its o
 
 - **The Jamming (Syntax Errors):**
  A failure that **Halts** the processing when the Tower encounters a structural violation it cannot resolve or doesn't understand the Spell.
-  - *The Mismatch Pair (Delimiters Mismatch):*  The Tower requires every opener to be closed by its exact pair — " closed by ", `(` closed by `)`. A mismatch `("text'` or `(text])` is an irreconcilable contradiction. The Tower **halts** and reports where it noticed the break, not necessarily where the mistake was introduced.
+  - **The Mismatch Pair (Delimiters Mismatch):**  The Tower requires every opener to be closed by its exact pair — " closed by ", `(` closed by `)`. A mismatch `("text'` or `(text])` is an irreconcilable contradiction. The Tower **halts** and reports where it noticed the break, not necessarily where the mistake was introduced.
+
+  - **The Phantom Command (Misspelled Function Name):** The Tower has no record of `prnt()`. It is not a known mark. The Tower **halts** at the moment that line is reached and reports a `NameError` — it found a word it has never seen. This is distinct from The Mismatch Pair (which is a structural delimiter failure) because the structure is valid; the *name* is wrong.*(4)*
 
 - **The Phantom Malfunction (Logic Error):** Valid spell that runs but produces the wrong result — the Tower did exactly what it was told, not what was meant. *(see Tier IV, Quality Control Gates for more).*
 
@@ -42,6 +44,16 @@ The unique magical engine of the tower. Each CodeTower (Python, Go, C) has its o
 
 - **The Spark (Execution/Running):**
 The act of telling the Tower to start reading the spell, energizing the spell, without the spark, the spell remains "inert".
+  - **The Test-Before-Deploy Law (Run vs. Submit):**
+  The wizard never presents a spell to the Tower's Quality Inspector without casting it privately first — an unverified spell sent to the Inspector is a spell sent to a client.
+  The Boot.dev mechanic is a compressed simulation of the real workflow:
+
+    | Boot.dev | Real World |
+    |---|---|
+    | Run | Local test / `pytest` / manual execution |
+    | Submit | Commit + push / deploy to staging or prod |
+
+    when you're making your on code you test(run) and after all test are made you commit(submit) the updated code (**never ship unverified work, always run first, submit second.**).*(5)*
 
 - **The Sequence Law (Sequential Execution):**
 The Tower's Mind does not choose which line to read first — it always begins at the top of the Spell and works downward. This means the physical position of a line determines when it's processed. A Proclamation written on line 1 will always announce before one written on line 4. Rearranging lines changes behavior.
@@ -81,6 +93,8 @@ ________________________________________________________________________________
 - *(1) **Simple to read and write:** Python's design philosophy prioritizes human readability, making it the premier entry point for new wizards.*
 - *(2) **Known for:** Backend web servers, DevOps/cloud engineering, machine learning, and automation scripts.*
 - *(3) **Frontend apps (The Limit):** Python is rarely used for frontend development or graphical user interfaces (GUIs). It is possible, but not standard practice in the industry.*
+- *(4) Unlike The Mismatch Pair (caught before The Spark completes its first step), The Phantom Command is caught mid-sequence — the Tower has already processed earlier lines. This is why line 1 can succeed while line 2 fails.*
+- *(5) In production codebases, this law is enforced structurally via CI (Continuous Integration) pipelines — the equivalent of a Tower that physically refuses to accept a Spell until it passes the Quality Inspector.*
 ___________________________________________________________________________________________________________
 
 ## Tier I: The Raw Materials (CH2)
@@ -308,6 +322,13 @@ ____________________________
 ### Decision Log
 the decision log is for YOU (Boots) to understand the structure behind my project and not just agree with every nonsense I could say. Inprotant to keep aditions to a minimum in order to avoid the decision log in becoming to heavy/big. (only provide new additions to the decision log when prompted.)
 
+- **V-Cross.1: The Cross-Tower Contamination Problem — DEFERRED**
+The Hearth and universal doctrines (e.g., The Test-Before-Deploy Law) currently reside physically inside `pjct001-BookBot_PYTN`. With one tower this was acceptable. With a Go Tower incoming, the address becomes a structural lie — universal content squatting in a tower-specific folder.
+
+  - *Settled:* Deferred until Go Tower construction begins and scope is clearer.
+  - *Rejected:* (a) Shared Grimoire — premature extraction before the full scope of cross-tower content is known. (b) Declared Squatter — leaves a misleading address as a permanent fixture.
+  - *Trigger:* Revisit this decision at the first lesson of the Go Tower curriculum.
+
 - **V-i.1: The Hearth Shadowing** — Placed Junction Points for Variables, Functions, and Logic in the Hearth.
   - *Because:* Ensures the foundation is structurally integrated with future Tiers.
   - *Rejected:* Omitting them (would have left the foundation isolated).
@@ -349,11 +370,11 @@ the decision log is for YOU (Boots) to understand the structure behind my projec
 ____________________________
 
 ### Current Status
-The **Universal Foundations (The Hearth)** are now 8/11 hardened in both Prose and -E siblings. All other tiers remain in skeleton form.
-Most recent additions: The Phantom Malfunction (Logic Error) and The Costly Spell (Performance Error).
+The **Universal Foundations (The Hearth)** are now 9/11 hardened in both Prose and -E siblings. All other tiers remain in skeleton form.
+Most recent additions: flag The Hearth as a declared universal zone — not Python-owned.
 ____________________________
 
-hey boots, soo I'm coming back here in the beginning of the course after finishing learning Git to document everything I've learned. what about this lesson can I add to my notes?
+hey boots, soo I'm coming back here after finishing learning Git to document everything I've learned. what about this lesson can I add to my notes?
 
 does the decision log have any additions?
 do I need to update my current status?
