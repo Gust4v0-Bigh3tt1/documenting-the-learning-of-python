@@ -70,6 +70,9 @@ The system by which the Tower communicates its internal state to the observer or
     - **The Echo (The Console):** This is the observer's plane where The Proclamation manifests. It is the "Universal Standard" for feedback.
       - Verb: **Announces** data to the observer.
     - **The String (Text)** anything in betwween `""` is considered as plain text even if it's a command.
+      - **The Literal Trap:** the proclamation announces the value it receives exactly as written and strings are already finished values.
+
+        E.G.: If arithmetic is wrapped in quotes (**print(`"(250 + 241 + 244 + 255) / 4"`)**),  the Tower prints the symbols (`(250 + 241 + 244 + 255) / 4`) instead of calculating them, that would be `247.5`, because quotation marks convert the whole expression into plain text.
 
   - **The Finished Product (`return`):**
   A protocol for internal shipment. It yields a material to be captured and used by the next station in the assembly line. *(See Tier II for Specialized Rigs/Functions).*
@@ -233,6 +236,7 @@ Consistency: This avoids the "Kingdom" overlap by keeping the scope strictly ind
     - **The Proclamation (print()):** A command mark that **Announces** data to the observer's console
       - **The Echo (Console):** The observer's plane where the Proclamation manifests.
       - **The String (Text):** Anything between `""` treated as plain text material.
+        - **The Literal Trap (Quoted Arithmetic):** If arithmetic is wrapped in "", the Tower prints the symbols instead of calculating them, because quotation marks convert the whole expression into plain text before The Proclamation announces it.
     - **The Finished Product (return):** A protocol that **Yields** data for internal shipment to the next station. `(see Tier II)`
   - **The Comment (#):** A margin note that the Tower **Ignores**.
   - **Unique Command Mark (Variables):** Labeled containers for specific materials or meanings. `(see Tier I)`
@@ -370,8 +374,8 @@ The Hearth and universal doctrines (e.g., The Test-Before-Deploy Law) currently 
 ____________________________
 
 ### Current Status
-The **Universal Foundations (The Hearth)** are now 9/11 hardened in both Prose and -E siblings. All other tiers remain in skeleton form.
-Most recent additions: flag The Hearth as a declared universal zone — not Python-owned.
+The **Universal Foundations (The Hearth)** are now **10/11 hardened** in both Prose and -E siblings. All other tiers remain in skeleton form.
+Most recent additions: **The Literal Trap (Quoted Arithmetic)** under **The String (Text)**, clarifying that quoted arithmetic is announced as plain text rather than processed as calculation.
 ____________________________
 
 hey boots, soo I'm coming back here after finishing learning Git to document everything I've learned. what about this lesson can I add to my notes?
