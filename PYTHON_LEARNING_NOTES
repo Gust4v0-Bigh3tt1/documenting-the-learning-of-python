@@ -57,6 +57,8 @@ The act of telling the Tower to start reading the spell, energizing the spell, w
 
 - **The Sequence Law (Sequential Execution):**
 The Tower's Mind does not choose which line to read first — it always begins at the top of the Spell and works downward. This means the physical position of a line determines when it's processed. A Proclamation written on line 1 will always announce before one written on line 4. Rearranging lines changes behavior.
+  
+  E.G.: *Two sequential `print()` calls prove the law physically — the first Proclamation always fires before the second, because line position determines execution order.*
 
 - **The Processing:**
 This is the central work of the Tower's Mind. Before any data is announced via a Proclamation or yielded as a Finished Product, the Tower **Processes** the instructions provided. In its simplest form, this involves mathematical marks (like `+`). The Tower evaluates the expression (e.g., `250 + 75`) and holds the result (`325`) in its mind to be used by the next command in the sequence. *(see tier I, Variables for more).*
@@ -73,6 +75,8 @@ The system by which the Tower communicates its internal state to the observer or
       - **The Literal Trap:** the proclamation announces the value it receives exactly as written and strings are already finished values.
 
         E.G.: If arithmetic is wrapped in quotes (**print(`"(250 + 241 + 244 + 255) / 4"`)**),  the Tower prints the symbols (`(250 + 241 + 244 + 255) / 4`) instead of calculating them, that would be `247.5`, because quotation marks convert the whole expression into plain text.
+    
+      - **The Bare Number (Integer Literal):** A number written without quotes (e.g., `42`, `250 + 75`) is recognized by the Tower as a value to be processed, not announced as text. Quotes are what convert a value into plain text — their absence is what permits calculation.
 
   - **The Finished Product (`return`):**
   A protocol for internal shipment. It yields a material to be captured and used by the next station in the assembly line. *(See Tier II for Specialized Rigs/Functions).*
@@ -237,6 +241,7 @@ Consistency: This avoids the "Kingdom" overlap by keeping the scope strictly ind
       - **The Echo (Console):** The observer's plane where the Proclamation manifests.
       - **The String (Text):** Anything between `""` treated as plain text material.
         - **The Literal Trap (Quoted Arithmetic):** If arithmetic is wrapped in "", the Tower prints the symbols instead of calculating them, because quotation marks convert the whole expression into plain text before The Proclamation announces it.
+        - **The Bare Number (Integer Literal):** A number without quotes (e.g., `42`) is processed as a value, not text — quotes are what convert a value into plain material; their absence permits calculation.
     - **The Finished Product (return):** A protocol that **Yields** data for internal shipment to the next station. `(see Tier II)`
   - **The Comment (#):** A margin note that the Tower **Ignores**.
   - **Unique Command Mark (Variables):** Labeled containers for specific materials or meanings. `(see Tier I)`
@@ -374,8 +379,13 @@ The Hearth and universal doctrines (e.g., The Test-Before-Deploy Law) currently 
 ____________________________
 
 ### Current Status
-The **Universal Foundations (The Hearth)** are now **10/11 hardened** in both Prose and -E siblings. All other tiers remain in skeleton form.
-Most recent additions: **The Literal Trap (Quoted Arithmetic)** under **The String (Text)**, clarifying that quoted arithmetic is announced as plain text rather than processed as calculation.
+The **Universal Foundations (The Hearth)** are now **11/11 hardened** in both Prose and -E siblings. All other tiers remain in skeleton form.
+
+Most recent additions:
+- **The Sequence Law E.G.** — concrete proof via sequential `print()` calls that line position determines execution order.
+- **The Bare Number (Integer Literal)** — closes the cause/effect loop on The Literal Trap; numbers without quotes are processed as values, not announced as text.
+
+Ch1: Introduction is complete. Next: **Tier I — The Raw Materials (Ch 2: Variables).**
 ____________________________
 
 hey boots, soo I'm coming back here after finishing learning Git to document everything I've learned. what about this lesson can I add to my notes?
