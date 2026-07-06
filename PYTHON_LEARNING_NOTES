@@ -115,7 +115,7 @@ ________________________________________________________________________________
     - **The Storage Bin (Container):** The named label itself — `player_health` without its value. The bin that receives the material.
       - **The Storage Bin Naming Law:** The names must be descriptive and a single continuous token — words separated by underscores, not spaces. (`player_health`, not `player health`.)
       - **The Re-assignment (Overwrite):** A bin can be refilled — assigning a new value to an existing variable replaces the old one entirely. The label stays; the material changes.
-
+        - **The Sequence Law:** governs when the overwrite takes effect. Once `player_health = 800` is written, every Proclamation after that line sees `800`. Every Proclamation before it already announced `900` and is gone. The Tower does not revise history.
     - **The Retrieval:** Once stored, a variable is accessed by its name alone — no quotes, no special marks. `print(player_health)` announces the *value inside the bin*, not the label. *(see the hearth, The Literal Trap for more insight)*
 
   - The Material Types:
@@ -263,7 +263,8 @@ Consistency: This avoids the "Kingdom" overlap by keeping the scope strictly ind
   - **Unique Line Mark (Variables):** — labeled containers filled in a single assignment.
     - **The Storage Bin (Container):** The named label that receives the material.
       - **The Storage Bin Naming Law:** Descriptive, single continuous token, underscores only.
-      - **The Re-assignment (Overwrite):** Label stays; material replaces entirely.
+      - **The Re-assignment (Overwrite):** Existing bin refilled — label persists, material replaced entirely.
+        - **The Sequence Law:** overwrite takes effect only from its line forward. Prior Proclamations are unaffected.
     - **The Retrieval:** Bare name returns the value. (see The Hearth, The Literal Trap)
    (The Essence of Matter) Python-specific matter
    - Integers, Floats, Strings, Booleans, and NoneType.
@@ -395,19 +396,18 @@ The Hearth and universal doctrines (e.g., The Test-Before-Deploy Law) currently 
 ____________________________
 
 ### Current Status
-Ch1: The **Universal Foundations (The Hearth)** (Introduction) is complete (**11/11 hardened** ) in both Prose and -E siblings.
+Ch1: The **Universal Foundations (The Hearth)** (Introduction) is complete (**11/11 hardened**) in both Prose and -E siblings.
 
-The **Tier I: The Raw Materials (Ch 2)** Variables entry is hardened — **(1/16 hardened)** in both Prose and -E siblings.
+The **Tier I: The Raw Materials (Ch 2)** Variables entry is hardened — **(2/16 hardened)** in both Prose and -E siblings.
+
 All other tiers remain in skeleton form.
 
 Most recent additions:
-- **The Unique Line Mark (Variables)** — home chapter established in Tier I with full hierarchy.
-- **The Storage Bin (Container)** — parent entry for Naming Law and Re-assignment.
-- **The Re-assignment (Overwrite)** — mechanical anchor for Dynamic Typing, hardened early.
-- **The Retrieval** — cross-referenced to The Literal Trap per Junction-Point Doctrine.
-Tier I skeleton (Material Types, Dynamic Typing, F-strings) remains unhardened.
+- **Sequence Law interaction** — Sequence Law governs overwrite timing; prior Proclamations are unaffected. Child note added under The Re-assignment in Tier I.
 
-Next: **Tier I — The Raw Materials (Ch 2: lesson 2).**
+Tier I skeleton (Material Types, Dynamic Typing, F-strings) remains unchanged.
+
+Next: **Tier I — The Raw Materials (Ch 2: lesson 3).**
 ____________________________
 
 hey boots, soo I'm coming back here after finishing learning Git to document everything I've learned. what about this lesson can I add to my notes?
