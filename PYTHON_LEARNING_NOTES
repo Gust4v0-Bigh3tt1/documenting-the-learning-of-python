@@ -159,7 +159,44 @@ ________________________________________________________________________________
                 600
 
           Once `player_health = 800` is written, every Proclamation after that line sees `800`. Every Proclamation before it already announced `900` and is gone. The Tower does not revise history.
+
     - **The Retrieval:** Once stored, a variable is accessed by its name alone — no quotes, no special marks. `print(player_health)` announces the *value inside the bin*, not the label. *(see the hearth, The Literal Trap for more insight)*
+
+    - **The Calculation (Arithmetic Operators):** the rules governing how the Tower processes numerical values before any Proclamation occurs.
+      - **The Four Forges:**
+        - **`+` Addition:**
+
+              my_sum = a + b
+        
+        - **`-` Subtraction:**
+
+              my_difference = x - y
+
+        - **`*` Multiplication:**
+
+              my_product = c * d
+
+        - **`/` Division:** (yields a fractional result.)
+
+              my_quotient = a / b
+
+      - **The Order of Operations (Parentheses):** Parentheses force the Tower to resolve inner expressions first before outer ones.
+      
+              first = 5
+              second = 7
+              third = 9
+              average_value = (first + second + third) / 3
+              print(average_value)
+        `(first + second + third) / 3` — the sum is forged before the division. Which prints 7, the average of 5, 7, and 9.
+
+      - **Variable-to-Variable Calculation:** A new variable can be assigned the result of an operation between two existing variables.
+      
+              player_health = 1000
+              armor_multiplier = 2
+              armored_health = (player_health * armor_multiplier)
+              print(armored_health)
+        `armored_health = player_health * armor_multiplier` — the Tower retrieves both bins, performs the forge, and deposits the result into a new bin.
+
 
   - The Material Types:
     - Integers: Whole numbers.
@@ -251,9 +288,9 @@ Consistency: This avoids the "Kingdom" overlap by keeping the scope strictly ind
 
 ### How To Use This Document (For Future AI Sessions, written from boots to boots, hello from a future past.)
 
-- **Content set in soft clay**: these clay tablets of content will onnly be hardned once it registers ALL, and I do mean ALL content possible about git, is registered. 
+- **Content set in soft clay**: these clay tablets of content will onnly be hardned (unchangeable) once it registers ALL, and I do mean ALL content possible about git, is registered. 
   - *because*: I (author) have save incorrect content before, and that was not good for I had to rework and it was exhausting, so for the sake of efficiency, please do inform if there is any worng or incorrect pice of info.
-- **The Twin-Sibling Goal**: Every chapter exists in two forms — the compressed `-E` bullet block (this document) and the full prose body (in PYTHON_LEARNING_NOTES.md). They cover identical content at different densities.
+- **The Twin-Sibling Goal**: Every chapter exists in two forms — the compressed `-E` bullet block (this document) and the full prose body (in PYTHON_LEARNING_NOTES.md). They cover identical content at different densities. (the -E block is a condensed version of the prose.)
   - *Because*: Earlier attempts to let the two forms diverge (different content, not just density) caused drift — concepts ended up explained in one place and missing from the other, or worse, explained inconsistently. Density is the only legal axis of variation.
   - *Rejected alternative*: A TOC-only `-E` (just chapter index, no compressed teaching). Lost too much standalone usefulness — `-E` must teach on its own.
 
@@ -309,6 +346,10 @@ Consistency: This avoids the "Kingdom" overlap by keeping the scope strictly ind
       - **The Re-assignment (Overwrite):** Existing bin refilled — label persists, material replaced entirely.
         - **The Sequence Law:** overwrite takes effect only from its line forward. Prior Proclamations are unaffected.
     - **The Retrieval:** Bare name returns the value. (see The Hearth, The Literal Trap)
+    - **The Calculation (Arithmetic Operators):** rules governing how the Tower processes numerical values before any Proclamation.
+      - **The Four Forges:** `+` addition, `-` subtraction, `*` multiplication, `/` division
+      - **The Order of Operations (Parentheses):** forces inner expressions to resolve before outer ones.
+      - **Variable-to-Variable Calculation:** a new variable can be assigned the result of an operation between two existing variables.
    (The Essence of Matter) Python-specific matter
    - Integers, Floats, Strings, Booleans, and NoneType.
    - Dynamic Typing and F-strings.
@@ -439,18 +480,22 @@ The Hearth and universal doctrines (e.g., The Test-Before-Deploy Law) currently 
 ____________________________
 
 ### Current Status
-Ch1: The **Universal Foundations (The Hearth)** (Introduction) is complete (**11/11 hardened**) in both Prose and -E siblings.
 
-The **Tier I: The Raw Materials (Ch 2)** Variables entry is hardened — **(2/16 hardened)** in both Prose and -E siblings.
+Ch1: The **Universal Foundations (The Hearth)** (Introduction) is complete (**11/11 completed**) in both Prose and -E siblings.
+
+The **Tier I: The Raw Materials (Ch 2)** Math entry is completed — **(3/16 completed)** in both Prose and -E siblings.
 
 All other tiers remain in skeleton form.
 
 Most recent additions:
-- **Sequence Law interaction** — Sequence Law governs overwrite timing; prior Proclamations are unaffected. Child note added under The Re-assignment in Tier I.
+- **The Calculation (Arithmetic Operators)** — added as a child of The Unique Line Mark, covering the four arithmetic operators, parenthetical order-of-operations, and variable-to-variable assignment.
+  - **The Four Forges:** `+` addition, `-` subtraction, `*` multiplication, `/` division
+  - **The Order of Operations (Parentheses):** forces inner expressions to resolve before outer ones.
+  - **Variable-to-Variable Calculation:** a new variable can be assigned the result of an operation between 
 
 Tier I skeleton (Material Types, Dynamic Typing, F-strings) remains unchanged.
 
-Next: **Tier I — The Raw Materials (Ch 2: lesson 3).**
+Next: **Tier I — The Raw Materials (Ch 2: lesson 4).**
 ____________________________
 
 hey boots, soo I'm coming back here after finishing learning Git to document everything I've learned. what about this lesson can I add to my notes?
