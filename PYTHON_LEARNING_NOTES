@@ -180,8 +180,26 @@ ________________________________________________________________________________
 
               my_quotient = a / b
 
+      - **The Inverted Forge (Negative Numbers):** A minus sign attached directly to a value flips its polarity — no subtraction is occurring, just a sign declaration. Distinguishes `damage = -10` (a bare negative value) from `result = x - y` (a subtraction operation between two bins).
+
+              player_health = 100
+              poison_damage = -10
+
+              player_poison_health = player_health + poison_damage
+
+              print(player_poison_health)
+        Output: 90. Here `-10` is a bare value — no subtraction is happening, the sign is baked into `poison_damage` itself.
+
+        Contrast this with an actual Subtraction Forge:
+
+              x = 100
+              y = 10
+              result = x - y
+              print(result)
+        Output: 90. Same result, different mechanism — `x - y` is a binary operation on two bins, while `-10` is a single value with a sign already attached. The Tower arrives at `90` by two structurally different routes.
+
       - **The Order of Operations (Parentheses):** Parentheses force the Tower to resolve inner expressions first before outer ones.
-      
+
               first = 5
               second = 7
               third = 9
@@ -288,7 +306,7 @@ Consistency: This avoids the "Kingdom" overlap by keeping the scope strictly ind
 
 ### How To Use This Document (For Future AI Sessions, written from boots to boots, hello from a future past.)
 
-- **Content set in soft clay**: these clay tablets of content will onnly be hardned (unchangeable) once it registers ALL, and I do mean ALL content possible about git, is registered. 
+- **Content set in soft clay**: these clay tablets of content will onnly be hardned (unchangeable) once it registers ALL, and I do mean ALL content possible about Python, is registered. 
   - *because*: I (author) have save incorrect content before, and that was not good for I had to rework and it was exhausting, so for the sake of efficiency, please do inform if there is any worng or incorrect pice of info.
 - **The Twin-Sibling Goal**: Every chapter exists in two forms — the compressed `-E` bullet block (this document) and the full prose body (in PYTHON_LEARNING_NOTES.md). They cover identical content at different densities. (the -E block is a condensed version of the prose.)
   - *Because*: Earlier attempts to let the two forms diverge (different content, not just density) caused drift — concepts ended up explained in one place and missing from the other, or worse, explained inconsistently. Density is the only legal axis of variation.
@@ -348,8 +366,10 @@ Consistency: This avoids the "Kingdom" overlap by keeping the scope strictly ind
     - **The Retrieval:** Bare name returns the value. (see The Hearth, The Literal Trap)
     - **The Calculation (Arithmetic Operators):** rules governing how the Tower processes numerical values before any Proclamation.
       - **The Four Forges:** `+` addition, `-` subtraction, `*` multiplication, `/` division
+      - **The Inverted Forge (Negative Numbers):** A minus sign attached directly to a value flips its polarity, not a subtraction — distinguishes -10 (a signed value) from x - y (an operation).
       - **The Order of Operations (Parentheses):** forces inner expressions to resolve before outer ones.
       - **Variable-to-Variable Calculation:** a new variable can be assigned the result of an operation between two existing variables.
+
    (The Essence of Matter) Python-specific matter
    - Integers, Floats, Strings, Booleans, and NoneType.
    - Dynamic Typing and F-strings.
@@ -481,24 +501,22 @@ ____________________________
 
 ### Current Status
 
-Ch1: The **Universal Foundations (The Hearth)** (Introduction) is complete (**11/11 completed**) in both Prose and -E siblings.
+Ch1: The **Universal Foundations (The Hearth)** (Introduction) is complete (**11/11 lessons completed**) in both Prose and -E siblings.
 
-The **Tier I: The Raw Materials (Ch 2)** Math entry is completed — **(3/16 completed)** in both Prose and -E siblings.
+The **Tier I: The Raw Materials (Ch 2)** — **(3/16 lessons completed)** in both Prose and -E siblings.
 
 All other tiers remain in skeleton form.
 
 Most recent additions:
-- **The Calculation (Arithmetic Operators)** — added as a child of The Unique Line Mark, covering the four arithmetic operators, parenthetical order-of-operations, and variable-to-variable assignment.
-  - **The Four Forges:** `+` addition, `-` subtraction, `*` multiplication, `/` division
-  - **The Order of Operations (Parentheses):** forces inner expressions to resolve before outer ones.
-  - **Variable-to-Variable Calculation:** a new variable can be assigned the result of an operation between 
+- **The Inverted Forge (Negative Numbers)** — added as a child of The Calculation, sequenced directly after The Four Forges (prerequisite to compound operations) and before Variable-to-Variable Calculation. Covers polarity-flip on bare values, with an explicit contrast example distinguishing `damage = -10` (signed value) from `result = x - y` (subtraction operation) — both resolving to `90` to isolate mechanism from result. Present in both Prose and -E siblings.
 
 Tier I skeleton (Material Types, Dynamic Typing, F-strings) remains unchanged.
 
-Next: **Tier I — The Raw Materials (Ch 2: lesson 4).**
+Next: **Tier I — The Raw Materials (Ch 2: lesson 5).**
 ____________________________
 
 hey boots, soo I'm coming back here after finishing learning Git to document everything I've learned. what about this lesson can I add to my notes?
 
-does the decision log have any additions?
+how many items are pending to be added to the decision log?
+(the objective is to add as little as possible to the decision log, is there a way to "solve" the pending items?)
 update my current status?
