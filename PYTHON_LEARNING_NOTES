@@ -275,6 +275,15 @@ ________________________________________________________________________________
           is_tall = True
           is_short = False
 
+    - **The Living Scroll (F-Strings):** A String that isn't fully inert — prefixed with `f`, it permits `{}` windows cut into the text, through which a Retrieval's value is drawn in live, at the moment of Proclamation. *(see The Hearth, The String, for more)*
+
+          num_bananas = 10
+          bananas = f"You have {num_bananas} bananas"
+          print(bananas)
+      Output: `You have 10 bananas`
+
+      Without the `f` prefix, `{num_bananas}` would print as the literal four characters `{num_bananas}` — the same Literal Trap mechanism that turns `(250 + 241 + 244 + 255) / 4` into printed symbols rather than `247.5`. *(see The Hearth, The Literal Trap, for more)* The `f` prefix is what exempts the `{}` contents from that trap, permitting live Retrieval instead.
+
     - Nonetype: Define None as "The Empty Crate./the Void crate." It’s not a missing crate (that would be a NameError); it’s a crate that has been delivered and accounted for, but contains absolutely nothing. It is a deliberate placeholder.
 
     - Dynamic Typing: (The shifting form) The fact that a "Storage Bin" labeled x can hold a String (Scroll) one second and an Integer (Whole Number) the next without the bin exploding is a Python-specific trait. In other languages (like Go), the bin is "forged" for only one material type.
@@ -480,9 +489,9 @@ Consistency: This avoids the "Kingdom" overlap by keeping the scope strictly ind
       - **Integer:** whole number, no decimal part.
       - **Float:** number with a decimal part.
     - **Essential Flame (Boolean):** held in its Lantern (bin) — There/Light (`True`) or Not There/Dark (`False`), exactly two states, no in-between.
-
+    - **The Living Scroll (F-Strings):** a String prefixed with `f` that embeds live variable Retrievals via `{}`, resolved at Proclamation time. `(see the hearth)`
     - NoneType.
-   - Dynamic Typing and F-strings.
+   - Dynamic Typing.
 
   Tier II: The Assembly Lines I (Ch 3-4)
    (The Specialized Rig (Functions))
@@ -669,21 +678,19 @@ ____________________________
 - **1. Per-chapter/tier completion:**
 
   - The Hearth: The Universal Foundations (Ch 1) — complete (11/11 lessons), Prose and -E in sync.
-  - Tier I: The Raw Materials (Ch 2) — 7/16 lessons completed, Prose and -E in sync as of this session's additions.
+  - Tier I: The Raw Materials (Ch 2) — 8/16 lessons completed, Prose and -E in sync as of this session's additions.
   - All other Tiers remain in skeleton form, unchanged.
 
 - **2. Most recent additions:**
-  - **The Inspector's Glass (`type()`)** — new entry, distinguishing `type(x)` (class object) from `type(x).__name__` (plain string label), triggered by this lesson's assignment surfacing the `str`/`int` mismatch.
-  - **The Weighted Materials (Numbers):** — converted from a full restatement into a cross-reference back to the Hearth's Bare Number / Literal Trap entry, correcting a Junction-Point violation caught mid-draft.
-    - **Integer** and **Float** — new leaf entries, deliberately left unnamed per the newly drafted Category-vs-Leaf Naming addendum.
-  - **The Essential Flame (Boolean)** — new named entry, restructured once to move the technical term into the parenthetical slot per the Naming Convention, then finalized with Light/Dark replacing an earlier Lit/Unlit draft.
-  - **Two universal template amendments drafted and logged:** the Category-vs-Leaf Naming addendum (Naming Convention) and the Declared-but-Sealed Targets addendum (Cross-Reference Format Lock).
+  - **The Living Scroll (F-Strings)** —  new named entry in Tier I, added under The Essence of Matter alongside String. Named per the Category-vs-Leaf addendum (interpolation mechanism has enough hidden complexity to warrant a full Workshop name, unlike Integer/Float).
+  - Entry's contrast clause was tightened to reference the Hearth's Literal Trap mechanism directly (`{num_bananas}` printing literally without the `f` prefix) rather than re-deriving it — avoids Junction-Point violation.
+  - Cross-reference pointer corrected mid-draft: initially misdirected at Tier I, retargeted to **The Hearth, The String** — since String's home chapter is the Hearth, not Tier I. Pointer placement itself resolved by matching existing in-document precedent (The Retrieval entry's end-of-clause placement).
 
 - **3. Open forward-references:**
   Footnote (2), under The Inspector's Glass entry, points to Tier VII, Dunder Attributes for the full nature of `.__name__`. This is now a legitimate pointer (not a broken link) per the newly logged Declared-but-Sealed Targets addendum, since Tier VII is declared and positioned, only sealed for content.
 
 - **Next:** 
-  **Tier I — The Raw Materials (Ch 2 Lesson 8), continuing the Material Types buildout at lesson 8/16.**
+  **Tier I — The Raw Materials (Ch 2 Lesson 9), continuing the Material Types buildout at lesson 9/16.**
 ____________________________
 
 hey boots, soo I'm coming back here after finishing learning Git to document everything I've learned. what about this lesson can I add to my notes?
