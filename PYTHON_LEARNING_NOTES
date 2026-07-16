@@ -244,17 +244,44 @@ ________________________________________________________________________________
         `armored_health = player_health * armor_multiplier` — the Tower retrieves both bins, performs the forge, and deposits the result into a new bin.
 
 
-  - The Material Types:
-    - Integers: Whole numbers.
-    (Unlike The String, presented in the hearth, which is wrapped in quotes to signify it is mere text material, a Raw Number is written plainly. If you wrap a number in quotes (e.g., "42"), the Tower treats it as an inert String; if you leave it bare (e.g., 42), the Tower recognizes it as a value capable of being used in a Calculation.)
-    - Floats: Fractional measurements.
-    - Strings: Scrolls of text.
-    - Booleans: The binary truth of "Light" (True) or "Dark" (False).
+  - **The Essence of Matter (The Python-specific Material Types):**
+
+    - **The Inspector's Glass(`type()`):** Reveals which material a Storage Bin currently holds. Distinguishes a bin that merely *looks* like the right material (e.g. `"100"`, a String wearing a number's face) from one that actually is — because Dynamic Typing means the bin's occupant can change, "essence" would be the wrong word; this tool reports current state, not fixed identity.
+
+            player_health = "100"
+            print(type(player_health))
+        Output: <class 'str'>
+
+            player_health = 100
+            print(type(player_health).__name__) (2)
+        Output: int
+
+    - **The Weighted Materials (Numbers):** Whole and fractional values are both subject to the Hearth's Bare Number / Literal Trap law — quotes make any value inert text regardless of whether it's whole or fractional. (see The Hearth, The Bare Number, for more)
+      - **Integers:** An integer (or "int") is a number without a decimal part, being a whole number:
+
+            x = 5
+        positive integer
+
+            y = -5
+        negative integer
+
+      - **Floats:** A float is a number with a decimal part, making fractional measurements.
+
+            x = 5.2
+            y = -5.2
+
+    - **The Essential Flame (Boolean / "bool"):** Held within its Lantern (the unique Storage Bin for this material) — the Flame has only two possible states: There/Light (True) or Not There/Dark (False), no in between. Where Numbers can hold infinite values and Strings infinite text, this material's entire range is exactly two.
+
+          is_tall = True
+          is_short = False
+
     - Nonetype: Define None as "The Empty Crate./the Void crate." It’s not a missing crate (that would be a NameError); it’s a crate that has been delivered and accounted for, but contains absolutely nothing. It is a deliberate placeholder.
+
     - Dynamic Typing: (The shifting form) The fact that a "Storage Bin" labeled x can hold a String (Scroll) one second and an Integer (Whole Number) the next without the bin exploding is a Python-specific trait. In other languages (like Go), the bin is "forged" for only one material type.
 ___________________________________________________________________________________________________________
 #### **FOOTNOTES:**
 - *(1) The no-casing style is included in the lesson only as a negative example — it works mechanically (the Tower's Mind can still parse it) but violates the descriptive-token intent of the Naming Law by sacrificing readability. Guido van Rossum's own PEP 8 explicitly recommends snake_case for Python; see https://peps.python.org/pep-0008/#function-and-variable-names.*
+- *(2) The nature of .__name__ is explained in full at (see Tier VII, Dunder Attributes, for more).*
 
 
 ## Tier II: The Assembly Lines I (CH 3-4)
@@ -447,9 +474,14 @@ Consistency: This avoids the "Kingdom" overlap by keeping the scope strictly ind
       - **The Inverted Forge (Negative Numbers):** A minus sign attached directly to a value flips its polarity, not a subtraction — distinguishes -10 (a signed value) from x - y (an operation).
       - **The Order of Operations (Parentheses):** forces inner expressions to resolve before outer ones.
       - **Variable-to-Variable Calculation:** a new variable can be assigned the result of an operation between two existing variables.
+   - **The Essence of Matter (Python-specific matter):** 
+    - **Inspector's Glass (`type()`):** Reveals current material in a bin; use `.__name__` to strip the class wrapper. `(see Tier VII)`
+    - **The Weighted Materials (Numbers):** quotes make any value inert text regardless of whole/fractional (see The Hearth, Bare Number).
+      - **Integer:** whole number, no decimal part.
+      - **Float:** number with a decimal part.
+    - **Essential Flame (Boolean):** held in its Lantern (bin) — There/Light (`True`) or Not There/Dark (`False`), exactly two states, no in-between.
 
-   (The Essence of Matter) Python-specific matter
-   - Integers, Floats, Strings, Booleans, and NoneType.
+    - NoneType.
    - Dynamic Typing and F-strings.
 
   Tier II: The Assembly Lines I (Ch 3-4)
@@ -501,6 +533,10 @@ ____________________________
 
 - **The Naming Convention**: Named concepts always follow the pattern *The [Name] ([Technical Term])*, e.g. "The Inside Cover (--global)."
   - *Because*: Pairing the analogy with the technical term in every mention prevents the analogy from drifting away from the underlying reality.
+  - **Addendum — Category-vs-Leaf Naming:** A category-level concept (e.g. Numbers, Boolean) receives a full Workshop name under the standard *The [Name] ([Technical Term])* pattern. A leaf-level member nested under that category (e.g. Integer and Float under Numbers) does not automatically receive its own name — it may stay a bare technical term unless a later lesson reveals it has enough independent altitude to warrant one (per the Junction-Point Doctrine's Intra-Chapter Refinement Addendum).
+  - *Because*: Naming every leaf individually produces name-inflation — dressing simple, self-evident terms (Integer, Float) in Workshop metaphor adds no comprehension value and dilutes the weight of names given to concepts that actually need scaffolding (e.g. Boolean's two-state nature, which is genuinely counter-intuitive without an analogy). Reserving full naming for category-level or high-altitude concepts keeps the Analogy-First Rule targeted at concepts that need it, rather than applied uniformly as decoration.
+  - *Boundary*: This only exempts leaves from *mandatory* naming — it does not forbid naming a leaf later if a future lesson demonstrates the leaf has hidden complexity (e.g., if Floats later needed an analogy to explain rounding/precision behavior, that would be a legitimate promotion, not a violation of this addendum).
+  - *Rejected alternative*: Naming every material uniformly regardless of altitude (the original, unexamined default). This was rejected once Integer and Float were drafted and found to need no scaffolding beyond their plain technical definitions — forcing names onto them would have been decoration without teaching value.
 
 - **The Verb Rule**: Command descriptions start with an action verb in present tense ("Reveals," "Stores," "Deletes").
   - *Because*: Forces clarity about what a command *does* rather than what it *is*.
@@ -540,6 +576,10 @@ ____________________________
   - Only use this format when the target section demonstrably exists. A pointer to a chapter that hasn't been written yet is not a deferred cross-reference — it's a broken link, and should be omitted entirely until the target is real.
   - *Because*: Two independent instances of this pointer had already drifted in casing, formatting, and closing phrase before either was noticed. Without a locked template, each new cross-reference risks re-inventing its own shape, and drift compounds silently the way the Twin-Sibling Rule warns against.
   - *Rejected alternative*: Leaving phrasing to per-instance judgment ("whatever reads naturally") — this is what produced the drift in the first place.
+  - **Addendum — Declared-but-Sealed Targets:** The broken-link clause bars pointers to targets that do not yet exist. It does not bar pointers to a target that is **declared-but-sealed** — a Tier or chapter that is already named and positioned within the curriculum's structure, but whose content is deliberately not yet written (e.g. Tier VII: The Blueprints, marked `SEALED`). A pointer to a declared-but-sealed target may be written now, using the standard locked format, since the destination is settled — only its content is pending.
+  - *Because*: The broken-link clause exists to prevent pointing at undecided or nonexistent structure. A sealed Tier is not undecided — its name and position in the curriculum are already fixed facts. Treating "not yet written" identically to "does not exist" discards real information the author already possesses, and would force every legitimate early reference to a known future Tier to be rewritten later in a batch, once that Tier unseals — introducing unnecessary rework risk for no structural benefit.
+  - *Boundary*: This only applies to Tiers/chapters that are explicitly declared in the curriculum skeleton (named, numbered, positioned) — it does not extend to speculative or informally-mentioned future content that has no fixed slot yet. An undeclared idea for a future chapter is still a true broken link and must be omitted.
+  - *Rejected alternative*: Deferring all such pointers until the sealed Tier unseals, then adding them retroactively (the original, unexamined approach). Rejected because it requires re-touching every entry that legitimately depends on a sealed-Tier concept later, in a batch, when the correct pointer could simply be written once, now, since the destination was never actually in question.
 
 ____________________________
 
@@ -626,20 +666,24 @@ ____________________________
     - *Because*: A status report's only job is to let a memoryless future session resume instantly. A single fused paragraph forces that session to re-parse and mentally re-separate what's done, what's partial, and what's next — the same failure mode the Message-in-a-Bottle Rule exists to prevent. Four labeled parts remove that parsing burden entirely.
     - *Rejected alternative*: Single-paragraph narrative status (Git Grimoire's original form). Technically complete but not scannable — completion state, recent work, and open issues were undifferentiated, forcing a full re-read rather than a quick scan.
 
-- Completion:
+- **1. Per-chapter/tier completion:**
 
-  - Ch1: The **Universal Foundations (The Hearth)** (Introduction) is complete (**11/11 lessons completed**) in both Prose and -E siblings.
+  - The Hearth: The Universal Foundations (Ch 1) — complete (11/11 lessons), Prose and -E in sync.
+  - Tier I: The Raw Materials (Ch 2) — 7/16 lessons completed, Prose and -E in sync as of this session's additions.
+  - All other Tiers remain in skeleton form, unchanged.
 
-  - The **Tier I: The Raw Materials (Ch 2)** — **(6/16 lessons completed)** in both Prose and -E siblings.
+- **2. Most recent additions:**
+  - **The Inspector's Glass (`type()`)** — new entry, distinguishing `type(x)` (class object) from `type(x).__name__` (plain string label), triggered by this lesson's assignment surfacing the `str`/`int` mismatch.
+  - **The Weighted Materials (Numbers):** — converted from a full restatement into a cross-reference back to the Hearth's Bare Number / Literal Trap entry, correcting a Junction-Point violation caught mid-draft.
+    - **Integer** and **Float** — new leaf entries, deliberately left unnamed per the newly drafted Category-vs-Leaf Naming addendum.
+  - **The Essential Flame (Boolean)** — new named entry, restructured once to move the technical term into the parenthetical slot per the Naming Convention, then finalized with Light/Dark replacing an earlier Lit/Unlit draft.
+  - **Two universal template amendments drafted and logged:** the Category-vs-Leaf Naming addendum (Naming Convention) and the Declared-but-Sealed Targets addendum (Cross-Reference Format Lock).
 
-  - All other tiers remain in skeleton form.
+- **3. Open forward-references:**
+  Footnote (2), under The Inspector's Glass entry, points to Tier VII, Dunder Attributes for the full nature of `.__name__`. This is now a legitimate pointer (not a broken link) per the newly logged Declared-but-Sealed Targets addendum, since Tier VII is declared and positioned, only sealed for content.
 
-- Most recent additions:
-  - **The Storage Bin Naming Law** — split from a flat, Python-only rule into a two-altitude structure: a universal no-spaces/single-token constraint, with the Python Tower's snake_case convention nested as a scoped child. Added a comparison table (camelCase, PascalCase, no-casing) documenting sibling Towers' dialects, with a footnote citing PEP 8 as the authority for Python's convention. This split also produced the Junction-Point Doctrine's Intra-Chapter Refinement Addendum, now promoted to the universal template rather than kept Python-local. Present in both Prose and -E siblings.
-
-  Open forward-references: none currently pending. The prior broken pointer under the naming law entry (referencing its own home chapter) has been removed per the Cross-Reference Format Lock's broken-link clause, rather than stubbed.
-
-- Next: **Tier I — The Raw Materials (Ch 2 Lesson 7, Basic Variable Types).**
+- **Next:** 
+  **Tier I — The Raw Materials (Ch 2 Lesson 8), continuing the Material Types buildout at lesson 8/16.**
 ____________________________
 
 hey boots, soo I'm coming back here after finishing learning Git to document everything I've learned. what about this lesson can I add to my notes?
