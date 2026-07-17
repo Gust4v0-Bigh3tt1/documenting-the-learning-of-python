@@ -299,6 +299,22 @@ ________________________________________________________________________________
             my_none = "None"
         this is a string with the value `"None"`
 
+        - Why Reach for the Void Crate — The Placeholder Use Case:
+
+        `None` marks a bin that will be filled *later*, once a value actually becomes available. Consider a Tower waiting on an observer's input: it declares the bin before the answer exists, because a Storage Bin cannot be declared without simultaneously holding *some* material — the Tower has no concept of an announced-but-empty label. `None` is what gets poured in as a stand-in, precisely because it represents nothing while still being something the bin can legally hold.
+
+            element_count = None
+            # ...later, once the count is actually known...
+            element_count = count_elements(some_list)
+
+        **Why not just use `0` as the placeholder?** Because `0` is a valid *answer*, not an absence of one. Suppose the question is "how many elements are in the list?" — a list with zero elements is a legitimate result, indistinguishable from "no answer has arrived yet" if both are represented as `0`. 
+
+            element_count = 0  # did we count yet, or did we count zero elements?
+
+        `None` resolves the ambiguity because it is not `0`, not `False`, not `""` — it is a distinct material that can only mean "not yet filled.", it's "absence of a value that is coming".
+
+        what happens when a Void Crate is used before it's filled *(see Tier VI, The Safety Net, for more)*
+
       - **The Python Tower's Dialect (`NameError`):** Python's manifestation of The Empty Retrieval *(see The Hearth, The Empty Retrieval, for more)* — surfaces at runtime, during The Spark, when a line referencing an unfilled bin actually executes. Code before that line runs normally; the Tower has no way to know the bin is missing until it tries to open it.
 
             print(enemy)
@@ -519,7 +535,7 @@ Consistency: This avoids the "Kingdom" overlap by keeping the scope strictly ind
       - **Float:** number with a decimal part.
     - **Essential Flame (Boolean):** held in its Lantern (bin) — There/Light (`True`) or Not There/Dark (`False`), exactly two states, no in-between.
     - **The Living Scroll (F-Strings):** a String prefixed with `f` that embeds live variable Retrievals via `{}`, resolved at Proclamation time. `(see the hearth)`
-    - **The Void Crate (NoneType):** a deliberate placeholder bin — delivered, accounted for, holds nothing. Not 0, False, or "". Not the string `"None"` either.
+    - **The Void Crate (NoneType):** a deliberate placeholder bin — delivered, accounted for, holds nothing. Not 0, False, or "". Not the string `"None"` either. `(see Tier VI)`
      - **Python Tower's Dialect (NameError):** Python's manifestation of The Empty Retrieval — surfaces at runtime when an unfilled bin is referenced. `(see Tier III)` `(see Tier VI)`
     - **The Identity Check (`is`):** tests if two names point to the *same* object, not just equal-looking values; mandated for `None` since only one Void Crate ever exists.
      - **Contrast — The Equality Check (`==`):** tests equal-looking values regardless of shared identity.
@@ -717,25 +733,22 @@ ____________________________
 - **1. Per-chapter/tier completion:**
 
   - The Hearth: The Universal Foundations (Ch 1) — complete (11/11 lessons), Prose and -E in sync.
-  - Tier I: The Raw Materials (Ch 2) — 9/16 lessons completed, Prose and -E in sync as of this session's additions.
+  - Tier I: The Raw Materials (Ch 2) — 10/16 lessons completed, Prose and -E in sync as of this session's additions.
   - All other Tiers remain in skeleton form, unchanged.
 
 - **2. Most recent additions:**
-  - **The Empty Retrieval (Reference Failure)** — new Hearth entry, Tower-agnostic, sited between The Jamming and The Phantom Malfunction. Triggered by this lesson's own output (a NameError from the unfilled starter-file variable).
-  - **The Void Crate (NoneType)** — promoted from stub to full entry; includes the None-vs-"None" string distinction.
-    - **The Python Tower's Dialect (NameError)** — new Tier I child entry nested under Void Crate, carrying the Python-specific runtime manifestation and a dual forward-pointer (diagnosis → Tier III, prevention → Tier VI).
-  - **The Identity Check (`is`)** and its child **Contrast — The Equality Check (`==`)** — new Tier I entries, scoped narrowly to the `None` case per this session's Junction-Point audit (general object-identity treatment deferred to Tier VII).
-  - The Python Tower's Dialect (NameError) entry now carries two live forward-pointers: *(see Tier III, The Paper Trail, for reading this failure) and (see Tier VI, The Safety Net, for catching this failure)* — both legitimate under Declared-but-Sealed, both still pointing at unwritten content.
+  - **The Void Crate (NoneType) entry **— resolution increased in-place via the Placeholder Use Case content (why `None` serves as a not-yet-filled default, and why `0`/`False`/`""` fail as substitutes). Per Intra-Chapter Refinement, this is expansion of the existing entry, not a new entry — no Decision Log addition generated (confirmed via the three-part citation test).
+  - A prospective `TypeError`-on-unfilled-`None` addition was evaluated and deferred, not written anywhere — passed the Undressing Requirement's shallow-vs-false test, and separately doesn't yet qualify for a forward-pointer since Tier VI isn't Declared-but-Sealed.
 
 - **3. Open forward-references:**
   - Footnote (2), under The Inspector's Glass entry, points to Tier VII, Dunder Attributes for the full nature of `.__name__`. This is now a legitimate pointer (not a broken link) per the newly logged Declared-but-Sealed Targets addendum, since Tier VII is declared and positioned, only sealed for content.
 
 - **Next:** 
-  **Tier I — The Raw Materials (Ch 2 Lesson 10), continuing the Material Types buildout at lesson 10/16.**
+  **Tier I — The Raw Materials (Ch 2 Lesson 11)**
 ____________________________
 
 hey boots, soo I'm coming back here after finishing learning Git to document everything I've learned. what about this lesson can I add to my notes?
 
 how many items are pending to be added to the decision log?
-(the objective is to add as little as possible to the decision log, is there a way to "solve" the pending items?)
+( the objective is to add as little as possible to the decision log, is there a way to "solve" the pending items? )
 update my current status?
