@@ -43,6 +43,8 @@ The unique magical engine of the tower. Each CodeTower (Python, Go, C) has its o
 
   - **The Phantom Command (Misspelled Function Name):** The Tower has no record of `prnt()`. It is not a known mark. The Tower **halts** at the moment that line is reached and reports a `NameError` — it found a word it has never seen. This is distinct from The Mismatch Pair (which is a structural delimiter failure) because the structure is valid; the *name* is wrong.*(1)*
 
+- **The Empty Retrieval (Reference Failure):** A failure that occurs when a spell attempts to retrieve a bin that was never filled — the name doesn't exist anywhere the Tower can find it. Distinct from The Jamming (the Tower can't parse the spell at all) and The Phantom Malfunction (the spell runs and produces a wrong-but-valid result) — here, the spell is asking for something that was never placed on the shelf to begin with - when this failure surfaces is Tower-specific — some Towers catch it before The Spark ever happens, others only discover it mid-Spark. *(see Tier I, The Python Tower's Dialect, for more)*
+
 - **The Phantom Malfunction (Logic Error):** Valid spell that runs but produces the wrong result — the Tower did exactly what it was told, not what was meant. *(see Tier IV, Quality Control Gates for more).*
 
 - **The Costly Spell (Performance Error):** A valid, correct spell that runs too slowly due to inefficient instructions fed to the engine. `(SEALED.)`
@@ -284,13 +286,39 @@ ________________________________________________________________________________
 
       Without the `f` prefix, `{num_bananas}` would print as the literal four characters `{num_bananas}` — the same Literal Trap mechanism that turns `(250 + 241 + 244 + 255) / 4` into printed symbols rather than `247.5`. *(see The Hearth, The Literal Trap, for more)* The `f` prefix is what exempts the `{}` contents from that trap, permitting live Retrieval instead.
 
-    - Nonetype: Define None as "The Empty Crate./the Void crate." It’s not a missing crate (that would be a NameError); it’s a crate that has been delivered and accounted for, but contains absolutely nothing. It is a deliberate placeholder.
+    - **The Void Crate (NoneType):** It’s not a missing crate (that would be a *NameError*); it’s a crate that has been delivered and accounted for, but contains absolutely nothing. It is a deliberate placeholder and represents the absence of a value. It is not the same as zero, False, or an empty string.
+
+            my_mental_acuity = None
+        The value of `my_mental_acuity` in this case is `None` until we use the assignment operator, `=`, to give it a value.
+
+      `None` Is NOT a String, the void crate is not the same as a string with a value of `"None"`:
+
+            my_none = None
+        this is a void crate(None-type)
+
+            my_none = "None"
+        this is a string with the value `"None"`
+
+      - **The Python Tower's Dialect (`NameError`):** Python's manifestation of The Empty Retrieval *(see The Hearth, The Empty Retrieval, for more)* — surfaces at runtime, during The Spark, when a line referencing an unfilled bin actually executes. Code before that line runs normally; the Tower has no way to know the bin is missing until it tries to open it.
+
+            print(enemy)
+        Output:
+
+            NameError: name 'enemy' is not defined
+
+        for the understanding of diagnosis *(see Tier III, The Paper Trail, for reading this failure)*
+        for the understanding of prevention *(see Tier VI, The Safety Net, for catching this failure)*
+
+
+    - **The Identity Check (`is`):** Tests whether two names point to the *same* underlying object in memory — not merely whether their contents look equal. For `None` specifically, `is` is the mandated comparison, not `==`, because there is only ever one `None` object in the entire Tower; every "empty" bin points to that same singular Void Crate. Asking `x is None` is asking "is this bin pointing at the one true Void Crate," which is a sharper and faster question than `==`'s "do these two things look equal."
+
+      - **Contrast with The Equality Check (`==`):** Tests whether two values look the same, regardless of whether they're the same underlying object. Two separate lists holding `[1, 2, 3]` are `==` but not `is` — they're equal in content, but different crates. `None` sidesteps this ambiguity entirely by only ever existing as one crate, which is why the idiom exists at all — `is None` isn't stylistic preference, it's exploiting a guarantee `==` doesn't have.
 
     - Dynamic Typing: (The shifting form) The fact that a "Storage Bin" labeled x can hold a String (Scroll) one second and an Integer (Whole Number) the next without the bin exploding is a Python-specific trait. In other languages (like Go), the bin is "forged" for only one material type.
 ___________________________________________________________________________________________________________
 #### **FOOTNOTES:**
 - *(1) The no-casing style is included in the lesson only as a negative example — it works mechanically (the Tower's Mind can still parse it) but violates the descriptive-token intent of the Naming Law by sacrificing readability. Guido van Rossum's own PEP 8 explicitly recommends snake_case for Python; see https://peps.python.org/pep-0008/#function-and-variable-names.*
-- *(2) The nature of .__name__ is explained in full at (see Tier VII, Dunder Attributes, for more).*
+- *(2) The nature of ".__name__" is explained in full at (see Tier VII, Dunder Attributes, for more).*
 
 
 ## Tier II: The Assembly Lines I (CH 3-4)
@@ -445,12 +473,13 @@ Consistency: This avoids the "Kingdom" overlap by keeping the scope strictly ind
   - **CodeTowers (Languages):** Diverse industrial realms with unique laws; this Grimoire **Specializes** in the Python Tower's engineering.
     - **The Python Tower (Python):** An environment designed to be simple to read and write; highly utilized for backend engines, automation, and machine learning, but structurally unsuited for frontend facades.
 
-  #### *I-The Hearth (Universal Foundations):(Foundations - Ch 1)*
+  #### *I-The Hearth (Universal Foundations):(Ch 1)*
   - **Universal Syntax (Standard):** The shared logic of I/O and Source Code across all CodeTowers.
   - **Case Sensitivity (Precision):** The law that `Print()` != `print()`; character casing changes identity.
   - **The Spell (.py file):** A digital scroll that **Stores** the logic of the program.
   - **The Tower's Mind (Interpreter):** The magical engine that **Translates** human-readable spells into machine reality.
   - **The Jamming (Syntax Error):** A failure that **Halts** the processing when the Tower doesn't understand the Spell.
+  - **The Empty Retrieval (Reference Failure):** A failure when a spell retrieves a bin that was never filled — distinct from Jamming (unparseable) and Phantom Malfunction (wrong-but-valid); surfaces differently per Tower. `(see Tier I)`
   - **The Phantom Malfunction (Logic Error):** Valid spell that runs but produces the wrong result — the Tower did exactly what it was told, not what was meant. `(see Tier IV)`
   - **The Costly Spell (Performance Error):** A valid, correct spell that runs too slowly due to inefficient instructions fed to the engine. `(SEALED.)`
   - **The Spark (Execution):** The act that **Energizes** the spell, moving it from inert to active.
@@ -483,14 +512,17 @@ Consistency: This avoids the "Kingdom" overlap by keeping the scope strictly ind
       - **The Inverted Forge (Negative Numbers):** A minus sign attached directly to a value flips its polarity, not a subtraction — distinguishes -10 (a signed value) from x - y (an operation).
       - **The Order of Operations (Parentheses):** forces inner expressions to resolve before outer ones.
       - **Variable-to-Variable Calculation:** a new variable can be assigned the result of an operation between two existing variables.
-   - **The Essence of Matter (Python-specific matter):** 
+  - **The Essence of Matter (Python-specific matter):** 
     - **Inspector's Glass (`type()`):** Reveals current material in a bin; use `.__name__` to strip the class wrapper. `(see Tier VII)`
     - **The Weighted Materials (Numbers):** quotes make any value inert text regardless of whole/fractional (see The Hearth, Bare Number).
       - **Integer:** whole number, no decimal part.
       - **Float:** number with a decimal part.
     - **Essential Flame (Boolean):** held in its Lantern (bin) — There/Light (`True`) or Not There/Dark (`False`), exactly two states, no in-between.
     - **The Living Scroll (F-Strings):** a String prefixed with `f` that embeds live variable Retrievals via `{}`, resolved at Proclamation time. `(see the hearth)`
-    - NoneType.
+    - **The Void Crate (NoneType):** a deliberate placeholder bin — delivered, accounted for, holds nothing. Not 0, False, or "". Not the string `"None"` either.
+     - **Python Tower's Dialect (NameError):** Python's manifestation of The Empty Retrieval — surfaces at runtime when an unfilled bin is referenced. `(see Tier III)` `(see Tier VI)`
+    - **The Identity Check (`is`):** tests if two names point to the *same* object, not just equal-looking values; mandated for `None` since only one Void Crate ever exists.
+     - **Contrast — The Equality Check (`==`):** tests equal-looking values regardless of shared identity.
    - Dynamic Typing.
 
   Tier II: The Assembly Lines I (Ch 3-4)
@@ -660,10 +692,17 @@ the decision log is for YOU (Boots) to understand the structure behind my projec
   - *Because:* The Spark is a one-time trigger; Processing is continuous per-line work. Parenting Processing under Spark would imply ignition and computation are the same phase — they are not. The Sequence Law is the connective tissue between them.
   - *Rejected:* Making Processing a child of Spark (collapses a three-phase reality into two, breaks when loops re-enter in Tier IV without re-triggering Spark).
 
-**V-i.9: Performance Failure Naming** — Named **The Costly Spell (Performance Error)**, not "The Sluggish Engine."
+- **V-i.9: Performance Failure Naming** — Named **The Costly Spell (Performance Error)**, not "The Sluggish Engine."
 
   - *Because:* The engine is a constant — it performs identically regardless of input. The inefficiency lives in the spell itself. Naming the failure after the spell locates the problem at its actual source, consistent with how The Jamming and The Phantom Malfunction are also spell-side failures, not engine-side reactions.
   - *Rejected:* "The Sluggish Engine" (misattributes the failure to the engine, which is neutral) and "The Sluggish Logic" (naming collision with The Phantom Malfunction).
+
+- **V-i.10: The Empty Retrieval / Dialect Split** — Split NameError into a universal Hearth entry (The Empty Retrieval) and a Python-specific Tier I child entry (The Python Tower's Dialect), rather than housing NameError directly in The Hearth.
+
+  - *Because*: NameError is not universal — Go catches the equivalent failure at compile-time, JavaScript names it ReferenceError, and C's behavior is inconsistent. Housing "NameError" itself in The Hearth would misrepresent a Python-specific manifestation as a cross-Tower universal, breaking the Hearth's copy-paste-across-Towers contract. The universal concept (referencing an unfilled bin) is real and Tower-agnostic; the *name* NameError is not.
+  - *Rejected*: Housing NameError directly in The Hearth as a third sibling to The Jamming/The Phantom Malfunction (the original plan) — would have required renaming or re-scoping the moment a Go Tower Grimoire was drafted and needed to describe its own compile-time equivalent.
+  - *Also rejected*: "Python's Empty Retrieval Dialect (NameError)" as the child entry's name — smuggled the universal concept's name into the Tower-specific label, undermining the entry's role as a cross-reference-dependent dialect rather than a self-contained rebrand. Reverted to precedent-locked `The Python Tower's Dialect (NameError)`.
+  - *Pattern noted*: dual forward-pointers (Tier III for diagnosis, Tier VI for prevention) from a single entry — first instance of this shape in the document; future entries with multiple legitimate destinations should follow the same differentiated-purpose phrasing rather than stacking undifferentiated links.
 ____________________________
 
 ### Current Status
@@ -678,19 +717,21 @@ ____________________________
 - **1. Per-chapter/tier completion:**
 
   - The Hearth: The Universal Foundations (Ch 1) — complete (11/11 lessons), Prose and -E in sync.
-  - Tier I: The Raw Materials (Ch 2) — 8/16 lessons completed, Prose and -E in sync as of this session's additions.
+  - Tier I: The Raw Materials (Ch 2) — 9/16 lessons completed, Prose and -E in sync as of this session's additions.
   - All other Tiers remain in skeleton form, unchanged.
 
 - **2. Most recent additions:**
-  - **The Living Scroll (F-Strings)** —  new named entry in Tier I, added under The Essence of Matter alongside String. Named per the Category-vs-Leaf addendum (interpolation mechanism has enough hidden complexity to warrant a full Workshop name, unlike Integer/Float).
-  - Entry's contrast clause was tightened to reference the Hearth's Literal Trap mechanism directly (`{num_bananas}` printing literally without the `f` prefix) rather than re-deriving it — avoids Junction-Point violation.
-  - Cross-reference pointer corrected mid-draft: initially misdirected at Tier I, retargeted to **The Hearth, The String** — since String's home chapter is the Hearth, not Tier I. Pointer placement itself resolved by matching existing in-document precedent (The Retrieval entry's end-of-clause placement).
+  - **The Empty Retrieval (Reference Failure)** — new Hearth entry, Tower-agnostic, sited between The Jamming and The Phantom Malfunction. Triggered by this lesson's own output (a NameError from the unfilled starter-file variable).
+  - **The Void Crate (NoneType)** — promoted from stub to full entry; includes the None-vs-"None" string distinction.
+    - **The Python Tower's Dialect (NameError)** — new Tier I child entry nested under Void Crate, carrying the Python-specific runtime manifestation and a dual forward-pointer (diagnosis → Tier III, prevention → Tier VI).
+  - **The Identity Check (`is`)** and its child **Contrast — The Equality Check (`==`)** — new Tier I entries, scoped narrowly to the `None` case per this session's Junction-Point audit (general object-identity treatment deferred to Tier VII).
+  - The Python Tower's Dialect (NameError) entry now carries two live forward-pointers: *(see Tier III, The Paper Trail, for reading this failure) and (see Tier VI, The Safety Net, for catching this failure)* — both legitimate under Declared-but-Sealed, both still pointing at unwritten content.
 
 - **3. Open forward-references:**
-  Footnote (2), under The Inspector's Glass entry, points to Tier VII, Dunder Attributes for the full nature of `.__name__`. This is now a legitimate pointer (not a broken link) per the newly logged Declared-but-Sealed Targets addendum, since Tier VII is declared and positioned, only sealed for content.
+  - Footnote (2), under The Inspector's Glass entry, points to Tier VII, Dunder Attributes for the full nature of `.__name__`. This is now a legitimate pointer (not a broken link) per the newly logged Declared-but-Sealed Targets addendum, since Tier VII is declared and positioned, only sealed for content.
 
 - **Next:** 
-  **Tier I — The Raw Materials (Ch 2 Lesson 9), continuing the Material Types buildout at lesson 9/16.**
+  **Tier I — The Raw Materials (Ch 2 Lesson 10), continuing the Material Types buildout at lesson 10/16.**
 ____________________________
 
 hey boots, soo I'm coming back here after finishing learning Git to document everything I've learned. what about this lesson can I add to my notes?
