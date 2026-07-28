@@ -330,11 +330,36 @@ ________________________________________________________________________________
 
       - **Contrast with The Equality Check (`==`):** Tests whether two values look the same, regardless of whether they're the same underlying object. Two separate lists holding `[1, 2, 3]` are `==` but not `is` — they're equal in content, but different crates. `None` sidesteps this ambiguity entirely by only ever existing as one crate, which is why the idiom exists at all — `is None` isn't stylistic preference, it's exploiting a guarantee `==` doesn't have.
 
-    - Dynamic Typing: (The shifting form) The fact that a "Storage Bin" labeled x can hold a String (Scroll) one second and an Integer (Whole Number) the next without the bin exploding is a Python-specific trait. In other languages (like Go), the bin is "forged" for only one material type.
+  - **The Malleable Bin (Dynamic Typing):** Describes a Tower where a Storage Bin can hold any material, and that material can change after the bin is first filled — the same bin that stored a Number can later store a String, with no error and no ceremony. In other languages (like Go), the bin is "forged" for only one material type.
+
+            speed = 5
+            speed = "five"
+
+    The Tower's Mind permits this without complaint. speed starts as an Integer, ends as a String, and nothing about the bin itself changes shape to allow it — Python bins were never forged for one material to begin with.
+
+    ####  **But Like, Maybe Don't:**
+
+    Permission is not the same as good practice. Reassigning a bin's material type is, in almost all circumstances, a bad habit to build — the proper move is to forge a new bin with a name that reflects its actual contents, rather than overloading an old one:
+
+            speed = 5
+            speed_description = "five"
+
+    *(3)*
+
+    ####  **The Forged Bin (Static Typing)**
+
+    Not every Tower permits the Shifting Form. Static Typing is the law in Towers like Go and TypeScript, where a bin is forged to hold exactly one material for its entire life. Attempting the same reassignment there doesn't run at all — the Tower's Mind halts before The Spark ever occurs, refusing to compile:
+
+            // if Go worked like Python's example:
+            speed = 5
+            speed = "five" // rejected — cannot assign a String to a Number's bin
+
+    This is a compile-time rejection, not a runtime one — the failure is caught before the spell is ever energized, distinct from a Jamming (see The Hearth, The Jamming, for more) which halts an already-attempted read.
 ___________________________________________________________________________________________________________
 #### **FOOTNOTES:**
 - *(1) The no-casing style is included in the lesson only as a negative example — it works mechanically (the Tower's Mind can still parse it) but violates the descriptive-token intent of the Naming Law by sacrificing readability. Guido van Rossum's own PEP 8 explicitly recommends snake_case for Python; see https://peps.python.org/pep-0008/#function-and-variable-names.*
 - *(2) The nature of ".__name__" is explained in full at (see Tier VII, Dunder Attributes, for more).*
+- *(3) This is the same Naming Law instinct as before — a new bin, not a repurposed one, keeps the label's meaning stable and honest. (see Tier I, The Storage Bin Naming Law, for more)*
 
 
 ## Tier II: The Assembly Lines I (CH 3-4)
@@ -401,6 +426,9 @@ Tier IV: The Assembly Lines II (Ch 7-8)
 
   - Conveyor Belts (Ch 8): The "Loops." Automated systems that repeat a task until a quota is met or the belt is empty.
     - The Infinite Treadmill (Loops): Repeating spells until a condition is met or a list is exhausted.
+
+    - (methods):
+      (sorted([word, top_word]) allocates a list and sorts it just to answer a yes/no question. Python can already tell you which of two strings is alphabetically smaller with a plain comparison operator (why?). sorted([word, top_word]) == word < top_word (why?))
       (list methods:
       |Method| Description|
       |---|---|
@@ -539,7 +567,7 @@ Consistency: This avoids the "Kingdom" overlap by keeping the scope strictly ind
      - **Python Tower's Dialect (NameError):** Python's manifestation of The Empty Retrieval — surfaces at runtime when an unfilled bin is referenced. `(see Tier III)` `(see Tier VI)`
     - **The Identity Check (`is`):** tests if two names point to the *same* object, not just equal-looking values; mandated for `None` since only one Void Crate ever exists.
      - **Contrast — The Equality Check (`==`):** tests equal-looking values regardless of shared identity.
-   - Dynamic Typing.
+  - **The Malleable Bin (Dynamic Typing):** A Storage Bin that can hold any material and change materials after being filled, with no error — contrast `The Forged Bin (Static Typing)`, where a bin is fixed to one material for life.
 
   Tier II: The Assembly Lines I (Ch 3-4)
    (The Specialized Rig (Functions))
@@ -733,19 +761,23 @@ ____________________________
 - **1. Per-chapter/tier completion:**
 
   - The Hearth: The Universal Foundations (Ch 1) — complete (11/11 lessons), Prose and -E in sync.
-  - Tier I: The Raw Materials (Ch 2) — 10/16 lessons completed, Prose and -E in sync as of this session's additions.
+  - Tier I: The Raw Materials (Ch 2) — 11/16 lessons completed, Prose and -E in sync as of this session's additions.
   - All other Tiers remain in skeleton form, unchanged.
 
 - **2. Most recent additions:**
-  - **The Void Crate (NoneType) entry **— resolution increased in-place via the Placeholder Use Case content (why `None` serves as a not-yet-filled default, and why `0`/`False`/`""` fail as substitutes). Per Intra-Chapter Refinement, this is expansion of the existing entry, not a new entry — no Decision Log addition generated (confirmed via the three-part citation test).
-  - A prospective `TypeError`-on-unfilled-`None` addition was evaluated and deferred, not written anywhere — passed the Undressing Requirement's shallow-vs-false test, and separately doesn't yet qualify for a forward-pointer since Tier VI isn't Declared-but-Sealed.
+  - The Malleable Bin (Dynamic Typing) — new entry, both twins written this session. Prose covers the Python-side behavior (silent, no-ceremony type reassignment) plus its named contrast, The Forged Bin (Static Typing), covering the Go/TypeScript compile-time rejection case. -E twin compressed to single-line form and filed into its skeleton slot (first-write, not a refinement — no prior -E resolution existed beyond the bare stub name).
+  - Naming went through iteration (Clay Bin → Quicksilver Bin → Malleable Bin) before landing on Malleable, chosen specifically to contrast against Forged Bin's metallurgy register and to avoid a Naming Collision with Tier V's existing Clay Tray (Lists). Per this session's clarified logging rule, this iteration itself is not a separate Decision Log entry — only finished artifacts representing durable doctrine get logged, and this entry's reasoning is judged self-evident inline.
 
 - **3. Open forward-references:**
   - Footnote (2), under The Inspector's Glass entry, points to Tier VII, Dunder Attributes for the full nature of `.__name__`. This is now a legitimate pointer (not a broken link) per the newly logged Declared-but-Sealed Targets addendum, since Tier VII is declared and positioned, only sealed for content.
+  - The Forged Bin entry's Go/TypeScript mention remains deliberately un-pointered (plain prose naming only) since the Go Tower isn't yet declared-but-sealed in your structure — flagged as a future candidate for a locked cross-reference once that Tower exists.
 
 - **Next:** 
-  **Tier I — The Raw Materials (Ch 2 Lesson 11)**
+  **Tier I — The Raw Materials (Ch 2 Lesson 12)**
 ____________________________
+
+- **Go**: caught at compile time — The Tower's Mind refuses to translate the spell at all if a declared bin goes unused or a used bin was never declared. Never reaches The Spark.
+- **C**: inconsistent — a truly undeclared name is a compile-time failure like Go, but an uninitialized-yet-declared bin can silently compile, blurring this failure with The Phantom Malfunction instead.
 
 hey boots, soo I'm coming back here after finishing learning Git to document everything I've learned. what about this lesson can I add to my notes?
 
