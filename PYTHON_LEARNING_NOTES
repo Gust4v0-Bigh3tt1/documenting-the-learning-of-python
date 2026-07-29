@@ -135,6 +135,33 @@ ________________________________________________________________________________
       or 
 
           player_health = 1000
+    
+    #### **The Batch Filling (Multi-Variable Declaration):** Several Storage Bins can be labeled and filled on a single line, rather than one assignment per line.
+
+      sword_name, sword_damage, sword_length = "Excalibur", 10, 200
+
+      is mechanically identical to:
+
+          sword_name = "Excalibur"
+          sword_damage = 10
+          sword_length = 200
+
+      There is no limit to how many bins can be filled this way — the Tower matches each name on the left to its corresponding value on the right, by position.
+
+      **The Kinship Convention:** Bins declared together on the same line *should* share some relationship — belonging to the same object, the same event, the same unit of logic — because the line itself visually groups them as a set. Declaring unrelated bins together (say, `sword_damage` and `player_name`) is legal, but it lies to the reader about a connection that isn't there. This is the same instinct behind Clean Code: writing that is easy for another developer (or future you) to read and understand.
+
+      **The Kinship Convention Under Reassignment:** The same convention carries forward when Batch Filling is used to *reassign* existing bins rather than declare fresh ones — with an added dimension declaration doesn't have. Where declaration groups bins by what they *are* (shared object, shared purpose), reassignment groups them by what's *happening to them* — signaling that these values are changing together, as one event, for one reason:
+
+            sword_damage, sword_length = 15, 250
+
+      If a sword's enchantment changes both its damage and its length, batching the reassignment documents that both changed *because of the same enchantment, at the same moment* — not as two coincidentally adjacent, independently-timed updates:
+
+            sword_damage = 15
+            sword_length = 250
+
+      Mechanically identical outcome, but this second form reads as two unrelated edits that happen to sit near each other, losing the "one cause, two effects" signal the batched form carries for free.
+
+      **The Typing Independence Clause:** This convention operates entirely above the type-checking layer. Whether a Tower is Dynamically or Statically Typed, batching reassignments together neither loosens nor tightens what values a bin will accept — a Malleable Bin permits `sword_damage = "fifteen"` on its own single-line reassignment already, batching several such reassignments together doesn't change that permissiveness. The convention is a readability discipline layered on top of whatever typing law the Tower already enforces, not a typing rule itself.
 
     - **Using the unique line mark (variables):**
 
@@ -775,18 +802,22 @@ ____________________________
 - **1. Per-chapter/tier completion:**
 
   - The Hearth: The Universal Foundations (Ch 1) — complete (11/11 lessons), Prose and -E in sync.
-  - Tier I: The Raw Materials (Ch 2) — 12/16 lessons completed, Prose and -E in sync as of this session's additions.
+  - Tier I: The Raw Materials (Ch 2) — 13/16 lessons completed, Prose and -E in sync as of this session's additions.
   - All other Tiers remain in skeleton form, unchanged.
 
 - **2. Most recent additions:**
-  - The Weld (String Concatenation) — new sub-entry expanding the existing Four Forges entry in place (both prose and -E twin), triggered by the current lesson (Math With Strings). Documents + as an overloaded operator: Forge transforms values into a new one, Weld preserves both originals in sequence, joined end-to-end. Filed under the Four Forges' existing + line rather than as a new top-level concept, per the Intra-Chapter Refinement Addendum — no new -E numbering was required as a result.
+  - The Batch Filling (Multi-Variable Declaration) — new sub-entry under The Unique Line Mark (Variables), filed adjacent to The Re-assignment (Overwrite), triggered by the current lesson (Multi-Variable Declaration). Documents comma-separated declaration as positional-match shorthand for repeated single-line assignment.
+  - The Kinship Convention — drafted alongside Batch Filling to capture the "declared-together-should-be-related" clean-code rule from the lesson.
+  - The Kinship Convention Under Reassignment — in-place expansion of the above (same home entry, per the Intra-Chapter Refinement Addendum), adding the distinction that reassignment-batching signals simultaneous change from one cause, not just shared identity at declaration time.
+  - The Typing Independence Clause — in-place expansion clarifying that batching reassignments neither loosens nor tightens Dynamic/Static Typing rules; it's a readability discipline layered above the typing law, not a typing rule itself.
+  - -E bullet for Multi-Variable Declaration confirmed unchanged — audited and left as originally drafted, since the reassignment/typing layers are prose-level elaboration (correct-but-shallow if skipped), not corrections requiring -E density changes, per the Twin-Sibling Rule.
 
 - **3. Open forward-references:**
   - Footnote (2), under The Inspector's Glass entry, points to Tier VII, Dunder Attributes for the full nature of `.__name__`. This is now a legitimate pointer (not a broken link) per the newly logged Declared-but-Sealed Targets addendum, since Tier VII is declared and positioned, only sealed for content.
   - The Forged Bin entry's Go/TypeScript mention remains deliberately un-pointered (plain prose naming only) since the Go Tower isn't yet declared-but-sealed in your structure — flagged as a future candidate for a locked cross-reference once that Tower exists.
 
 - **Next:** 
-  **Tier I — The Raw Materials (Ch 2 Lesson 13)**
+  **Tier I — The Raw Materials (Ch 2 Lesson 14)**
 ____________________________
 
 - **Go**: caught at compile time — The Tower's Mind refuses to translate the spell at all if a declared bin goes unused or a used bin was never declared. Never reaches The Spark.
