@@ -197,7 +197,20 @@ ________________________________________________________________________________
         - **`+` Addition:**
 
               my_sum = a + b
-        
+
+          #### **The Weld (String Concatenation):**
+            When working with strings the `+` operator performs a "concatenation," which is a fancy word that means "joining two things" (in this case strings). *Generally speaking*, it's better to use string interpolation with `f-strings` over `+` concatenation.
+
+                first_name = "Lane "
+                last_name = "Wagner"
+                full_name = first_name + last_name
+                print(full_name)
+          Output: `"Lane Wagner"`
+
+          `full_name` now holds the value `"Lane Wagner"`.
+
+          Notice the extra space at the end of `"Lane "` in the `first_name` variable. That extra space is there to separate the words in the final result: `"Lane Wagner"`. *(2)*
+
         - **`-` Subtraction:**
 
               my_difference = x - y
@@ -255,7 +268,7 @@ ________________________________________________________________________________
         Output: <class 'str'>
 
             player_health = 100
-            print(type(player_health).__name__) (2)
+            print(type(player_health).__name__) *(3)*
         Output: int
 
     - **The Weighted Materials (Numbers):** Whole and fractional values are both subject to the Hearth's Bare Number / Literal Trap law — quotes make any value inert text regardless of whether it's whole or fractional. (see The Hearth, The Bare Number, for more)
@@ -344,7 +357,7 @@ ________________________________________________________________________________
             speed = 5
             speed_description = "five"
 
-    *(3)*
+    *(4)*
 
     ####  **The Forged Bin (Static Typing)**
 
@@ -358,8 +371,9 @@ ________________________________________________________________________________
 ___________________________________________________________________________________________________________
 #### **FOOTNOTES:**
 - *(1) The no-casing style is included in the lesson only as a negative example — it works mechanically (the Tower's Mind can still parse it) but violates the descriptive-token intent of the Naming Law by sacrificing readability. Guido van Rossum's own PEP 8 explicitly recommends snake_case for Python; see https://peps.python.org/pep-0008/#function-and-variable-names.*
-- *(2) The nature of ".__name__" is explained in full at (see Tier VII, Dunder Attributes, for more).*
-- *(3) This is the same Naming Law instinct as before — a new bin, not a repurposed one, keeps the label's meaning stable and honest. (see Tier I, The Storage Bin Naming Law, for more)*
+- *(2) Alternativly, you could just add the space in between veriables e.g. `first_name = "Alex"`, `last_name = "Jones"`, `full_name = first_name + " " + last_name`. Printing full_name would result in `"Alex Jones"`*
+- *(3) The nature of "`.__name__`" is explained in full at (see Tier VII, Dunder Attributes, for more).*
+- *(4) This is the same Naming Law instinct as before — a new bin, not a repurposed one, keeps the label's meaning stable and honest. (see Tier I, The Storage Bin Naming Law, for more)*
 
 
 ## Tier II: The Assembly Lines I (CH 3-4)
@@ -552,7 +566,7 @@ Consistency: This avoids the "Kingdom" overlap by keeping the scope strictly ind
         - **The Sequence Law:** overwrite takes effect only from its line forward. Prior Proclamations are unaffected.
     - **The Retrieval:** Bare name returns the value. (see The Hearth, The Literal Trap)
     - **The Calculation (Arithmetic Operators):** rules governing how the Tower processes numerical values before any Proclamation.
-      - **The Four Forges:** `+` addition, `-` subtraction, `*` multiplication, `/` division
+      - **The Four Forges:** `+` addition (on Strings: The Weld — joins end-to-end, doesn't sum), `-` subtraction, `*` multiplication, `/` division
       - **The Inverted Forge (Negative Numbers):** A minus sign attached directly to a value flips its polarity, not a subtraction — distinguishes -10 (a signed value) from x - y (an operation).
       - **The Order of Operations (Parentheses):** forces inner expressions to resolve before outer ones.
       - **Variable-to-Variable Calculation:** a new variable can be assigned the result of an operation between two existing variables.
@@ -761,19 +775,18 @@ ____________________________
 - **1. Per-chapter/tier completion:**
 
   - The Hearth: The Universal Foundations (Ch 1) — complete (11/11 lessons), Prose and -E in sync.
-  - Tier I: The Raw Materials (Ch 2) — 11/16 lessons completed, Prose and -E in sync as of this session's additions.
+  - Tier I: The Raw Materials (Ch 2) — 12/16 lessons completed, Prose and -E in sync as of this session's additions.
   - All other Tiers remain in skeleton form, unchanged.
 
 - **2. Most recent additions:**
-  - The Malleable Bin (Dynamic Typing) — new entry, both twins written this session. Prose covers the Python-side behavior (silent, no-ceremony type reassignment) plus its named contrast, The Forged Bin (Static Typing), covering the Go/TypeScript compile-time rejection case. -E twin compressed to single-line form and filed into its skeleton slot (first-write, not a refinement — no prior -E resolution existed beyond the bare stub name).
-  - Naming went through iteration (Clay Bin → Quicksilver Bin → Malleable Bin) before landing on Malleable, chosen specifically to contrast against Forged Bin's metallurgy register and to avoid a Naming Collision with Tier V's existing Clay Tray (Lists). Per this session's clarified logging rule, this iteration itself is not a separate Decision Log entry — only finished artifacts representing durable doctrine get logged, and this entry's reasoning is judged self-evident inline.
+  - The Weld (String Concatenation) — new sub-entry expanding the existing Four Forges entry in place (both prose and -E twin), triggered by the current lesson (Math With Strings). Documents + as an overloaded operator: Forge transforms values into a new one, Weld preserves both originals in sequence, joined end-to-end. Filed under the Four Forges' existing + line rather than as a new top-level concept, per the Intra-Chapter Refinement Addendum — no new -E numbering was required as a result.
 
 - **3. Open forward-references:**
   - Footnote (2), under The Inspector's Glass entry, points to Tier VII, Dunder Attributes for the full nature of `.__name__`. This is now a legitimate pointer (not a broken link) per the newly logged Declared-but-Sealed Targets addendum, since Tier VII is declared and positioned, only sealed for content.
   - The Forged Bin entry's Go/TypeScript mention remains deliberately un-pointered (plain prose naming only) since the Go Tower isn't yet declared-but-sealed in your structure — flagged as a future candidate for a locked cross-reference once that Tower exists.
 
 - **Next:** 
-  **Tier I — The Raw Materials (Ch 2 Lesson 12)**
+  **Tier I — The Raw Materials (Ch 2 Lesson 13)**
 ____________________________
 
 - **Go**: caught at compile time — The Tower's Mind refuses to translate the spell at all if a declared bin goes unused or a used bin was never declared. Never reaches The Spark.
@@ -781,6 +794,6 @@ ____________________________
 
 hey boots, soo I'm coming back here after finishing learning Git to document everything I've learned. what about this lesson can I add to my notes?
 
-how many items are pending to be added to the decision log?
+any items are pending to be added to the decision log?
 ( the objective is to add as little as possible to the decision log, is there a way to "solve" the pending items? )
-update my current status?
+update my current status
