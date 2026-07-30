@@ -45,7 +45,7 @@ The unique magical engine of the tower. Each CodeTower (Python, Go, C) has its o
 
 - **The Empty Retrieval (Reference Failure):** A failure that occurs when a spell attempts to retrieve a bin that was never filled — the name doesn't exist anywhere the Tower can find it. Distinct from The Jamming (the Tower can't parse the spell at all) and The Phantom Malfunction (the spell runs and produces a wrong-but-valid result) — here, the spell is asking for something that was never placed on the shelf to begin with - when this failure surfaces is Tower-specific — some Towers catch it before The Spark ever happens, others only discover it mid-Spark. *(see Tier I, The Python Tower's Dialect, for more)*
 
-- **The Phantom Malfunction (Logic Error):** Valid spell that runs but produces the wrong result — the Tower did exactly what it was told, not what was meant. *(see Tier IV, Quality Control Gates for more).*
+- **The Phantom Malfunction (Logic Error):** Valid spell that runs but produces the wrong result — the Tower did exactly what it was told, not what was meant. *(see Tier IV, Quality Control Gates, for more).*
 
 - **The Costly Spell (Performance Error):** A valid, correct spell that runs too slowly due to inefficient instructions fed to the engine. `(SEALED.)`
 
@@ -86,7 +86,7 @@ The system by which the Tower communicates its internal state to the observer or
       - **The Bare Number (Integer Literal):** A number written without quotes (e.g., `42`, `250 + 75`) is recognized by the Tower as a value to be processed, not announced as text. Quotes are what convert a value into plain text — their absence is what permits calculation.
 
   - **The Finished Product (`return`):**
-  A protocol for internal shipment. It yields a material to be captured and used by the next station in the assembly line. *(See Tier II for Specialized Rigs/Functions).*
+  A protocol for internal shipment. It yields a material to be captured and used by the next station in the assembly line. *(see Tier II, for Specialized Rigs/Functions, for more).*
     - Verb: **Yields** data for internal use.
 
 - **The Comment (`#`):**
@@ -110,14 +110,14 @@ A margin note spanning multiple lines, bound by triple quotes on both ends. Rath
     This is not dedicated comment syntax like `#` — it is an unassigned String that the Tower reads and discards because it was never stored or Proclaimed. *(3)*
 
 - **Unique line Mark (Variables):** 
-  Labeled containers of 1 specific meaning, phenomenon or raw material (data). *(see Tier I, Variables for more).*
+  Labeled containers of 1 specific meaning, phenomenon or raw material (data). *(see Tier I, Variables, for more).*
 
 - **Specialized Rig Runes (functions):** 
-  A custom magitech machinery built to perform a specific, repeatable transformation on inputs. *(see Tier II, Functions for more).*
+  A custom magitech machinery built to perform a specific, repeatable transformation on inputs. *(see Tier II, Functions, for more).*
 
 - **The Comparison marks: (`==`, `>`, `<`, `!=`) (Logic Gates)**
 Fundamental marks used to measure the relationship between two materials.
-  - Verb: **Evaluates** the truth of a relationship. *(See Tier IV, Quality Control Gates for more).*
+  - Verb: **Evaluates** the truth of a relationship. *(see Tier IV, Quality Control Gates, for more).*
 ___________________________________________________________________________________________________________
 #### **FOOTNOTES:**
 - *(1) Unlike The Mismatch Pair (caught before The Spark completes its first step), The Phantom Command is caught mid-sequence — the Tower has already processed earlier lines. This is why line 1 can succeed while line 2 fails.*
@@ -574,7 +574,7 @@ Consistency: This avoids the "Kingdom" overlap by keeping the scope strictly ind
     - **The Proclamation (print()):** A command mark that **Announces** data to the observer's console
       - **The Echo (Console):** The observer's plane where the Proclamation manifests.
       - **The String ("Text"):** Anything between `""` treated as plain text material.
-        - **The Literal Trap (Quoted Arithmetic):** If arithmetic is wrapped in "", the Tower prints the symbols instead of calculating them, because quotation marks convert the whole expression into plain text before The Proclamation announces it.
+        - **The Literal Trap (Any Quoted Retrieval, Arithmetic or Otherwise.):** If arithmetic is wrapped in "", the Tower prints the symbols instead of calculating them, because quotation marks convert the whole expression into plain text before The Proclamation announces it.
         - **The Bare Number (Integer Literal):** A number without quotes (e.g., `42`) is processed as a value, not text — quotes are what convert a value into plain material; their absence permits calculation.
     - **The Finished Product (return):** A protocol that **Yields** data for internal shipment to the next station. `(see Tier II)`
   - **The Comment (#):** A margin note that the Tower **Ignores**.
@@ -802,22 +802,18 @@ ____________________________
 - **1. Per-chapter/tier completion:**
 
   - The Hearth: The Universal Foundations (Ch 1) — complete (11/11 lessons), Prose and -E in sync.
-  - Tier I: The Raw Materials (Ch 2) — 13/16 lessons completed, Prose and -E in sync as of this session's additions.
+  - Tier I: The Raw Materials (Ch 2) — 14/16 lessons completed, Prose and -E in sync as of this session's additions.
   - All other Tiers remain in skeleton form, unchanged.
 
 - **2. Most recent additions:**
-  - The Batch Filling (Multi-Variable Declaration) — new sub-entry under The Unique Line Mark (Variables), filed adjacent to The Re-assignment (Overwrite), triggered by the current lesson (Multi-Variable Declaration). Documents comma-separated declaration as positional-match shorthand for repeated single-line assignment.
-  - The Kinship Convention — drafted alongside Batch Filling to capture the "declared-together-should-be-related" clean-code rule from the lesson.
-  - The Kinship Convention Under Reassignment — in-place expansion of the above (same home entry, per the Intra-Chapter Refinement Addendum), adding the distinction that reassignment-batching signals simultaneous change from one cause, not just shared identity at declaration time.
-  - The Typing Independence Clause — in-place expansion clarifying that batching reassignments neither loosens nor tightens Dynamic/Static Typing rules; it's a readability discipline layered above the typing law, not a typing rule itself.
-  - -E bullet for Multi-Variable Declaration confirmed unchanged — audited and left as originally drafted, since the reassignment/typing layers are prose-level elaboration (correct-but-shallow if skipped), not corrections requiring -E density changes, per the Twin-Sibling Rule.
+  - No new named concepts added this session. Work was entirely audit-mode: checked the Boots lesson content against existing doctrine (concluded it maps to The Literal Trap scope-broadening, no new entry), and ran Documentation Standards compliance checks against both the Tier I draft and The Hearth draft (found Cross-Reference Format Lock drift in six instances, Verb Rule pattern inconsistency, unresolved header-style question).
 
 - **3. Open forward-references:**
   - Footnote (2), under The Inspector's Glass entry, points to Tier VII, Dunder Attributes for the full nature of `.__name__`. This is now a legitimate pointer (not a broken link) per the newly logged Declared-but-Sealed Targets addendum, since Tier VII is declared and positioned, only sealed for content.
   - The Forged Bin entry's Go/TypeScript mention remains deliberately un-pointered (plain prose naming only) since the Go Tower isn't yet declared-but-sealed in your structure — flagged as a future candidate for a locked cross-reference once that Tower exists.
 
 - **Next:** 
-  **Tier I — The Raw Materials (Ch 2 Lesson 14)**
+  **Tier I — The Raw Materials (Ch 2 Lesson 15)**
 ____________________________
 
 - **Go**: caught at compile time — The Tower's Mind refuses to translate the spell at all if a declared bin goes unused or a used bin was never declared. Never reaches The Spark.
