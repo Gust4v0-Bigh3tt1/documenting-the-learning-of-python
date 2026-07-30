@@ -802,7 +802,7 @@ ____________________________
 - **1. Per-chapter/tier completion:**
 
   - The Hearth: The Universal Foundations (Ch 1) — complete (11/11 lessons), Prose and -E in sync.
-  - Tier I: The Raw Materials (Ch 2) — 15/16 lessons completed, Prose and -E in sync as of this session's additions.
+  - Tier I: The Raw Materials (Ch 2) — completed (16/16 lessons), Prose and -E in sync.
   - All other Tiers remain in skeleton form, unchanged.
 
 - **2. Most recent additions:**
@@ -813,7 +813,7 @@ ____________________________
   - The Forged Bin entry's Go/TypeScript mention remains deliberately un-pointered (plain prose naming only) since the Go Tower isn't yet declared-but-sealed in your structure — flagged as a future candidate for a locked cross-reference once that Tower exists.
 
 - **Next:** 
-  **Tier I — The Raw Materials (Ch 2 Lesson 16)**
+  **Tier II — The Assembly Lines I (Ch 3 Lesson 1)**
 ____________________________
 
 - **Go**: caught at compile time — The Tower's Mind refuses to translate the spell at all if a declared bin goes unused or a used bin was never declared. Never reaches The Spark.
